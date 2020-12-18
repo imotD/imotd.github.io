@@ -1,0 +1,24 @@
+{
+  "name": "superwebs",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.6.2",
+    "gridsome": "^0.7.20",
+    "gridsome-source-static-meta": "github:noxify/gridsome-source-static-meta#master",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.2.3",
+    "prism-themes": "^1.4.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.2"
+  },
+  "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^3.0.1"
+  }
+}
