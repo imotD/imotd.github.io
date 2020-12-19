@@ -1,10 +1,14 @@
 module.exports = {
   siteName: 'Gridsome',
+  siteUrl: 'https://dottomuniverse.space/',
+  pathPrefix: 'https://github.com/imotD/imotD.github.io',
 
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
+      // use: 'gridsome-source-static-meta',
       options: {
+        path: 'settings/*.json',
         tailwindConfig: './tailwind.config.js',
         purgeConfig: {},
         presetEnvConfig: {},

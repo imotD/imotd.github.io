@@ -1,12 +1,11 @@
 <template>
   <Layout>
     <section id="container-centre" class="column centre flex-1">
-      <h1 class="page-title">Welcome to Skeleventy!</h1>
+      <h1 class="page-title">Hi, i'm ImotD</h1>
       <div class="content">
         <p>
-          A 
-          <a href="https://www.gridsome.org">Gridsome</a> starter built with
-          <a href="https://tailwindcss.com">TailwindCSS</a>.
+         Seorang Web Designer yang bercita-cita menjadi Frontend Developer.
+         <h5 class="text-red-500">Web ini masih dalam pengembangan</h5>
         </p>
         <h2 class="text-3xl">Features</h2>
         <ul class="mb-12 list-disc pl-4">
