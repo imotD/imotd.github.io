@@ -1,5 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ?
-    '/imotD.github.io/' :
-    '/'
+  publicPath: '/imotD.github.io/'    
 }
