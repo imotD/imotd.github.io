@@ -1,11 +1,20 @@
-.DS_Store
-node_modules
-/dist
+# Created by https://www.toptal.com/developers/gitignore/api/linux,visualstudiocode,vuejs
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,visualstudiocode,vuejs
 
+### Linux ###
+*~
 
-# local env files
-.env.local
-.env.*.local
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
 
 # Log files
 npm-debug.log*
@@ -13,7 +22,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Editor directories and files
+### VisualStudioCode ###
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
 .idea
 .vscode
 *.suo
@@ -21,3 +34,27 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+### Vuejs ###
+# Recommended template: Node.gitignore
+*.log
+.cache
+.DS_Store
+src/.temp
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# local env files
+.env.local
+.env.*.local
+.env
+.env.*
+
+# End of https://www.toptal.com/developers/gitignore/api/linux,visualstudiocode,vuejs
