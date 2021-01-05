@@ -9,7 +9,7 @@ script: npm run build
 deploy:
  provider: pages
  skip_cleanup: true
- github_token: 1bcab4aa72add299d72fbea0cf28c42768527a2f
+ github_token: process.env.VUE_APP_GITHUBKEY
  local_dir: dist
  on:
    branch: master
