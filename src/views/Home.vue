@@ -1,27 +1,125 @@
 <template>
-  <div class="container mx-auto px-10 pt-10">
-    <p class="text-5xl">Yo.</p>
-    <br />
-    <h2 class="text-3xl">I'm imotD.</h2>
-    <p class="text-2xl tracking-wider">
-      <span class="bg-yellow-200">My goal</span> is to become a
-      <span class="text-blue-400">recognized frontend developer</span>.
-    </p>
-
-    <div class="pt-10 grid grid-cols-2 font-light tracking-wider">
-      Website maintance Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Fugit libero doloribus itaque minus magni expedita dolorum iste nulla
-      incidunt aspernatur. Lorem ipsum dolor sit, amet consectetur adipisicing
-      elit. Incidunt, ducimus inventore assumenda quibusdam odit temporibus a in
-      quo officiis rerum nihil iusto quam at, eum eligendi laboriosam qui,
-      facere mollitia.
+  <div class="home">
+    <div class="container mx-auto px-10">
+      <div class="grid sm:grid-cols-2 gap-4 flex items-center home__content">
+        <div class="">
+          <p class="text-4xl font-bold tracking-wider">
+            Hai, Saya
+            <span class="hover:text-yellow-400 font-black"> ImotD </span>.
+          </p>
+          <div class="py-8 tracking-wide">
+            salam kenal, saya suka buat sesuatu. <br />
+            mimpi saya menjadi frontend developer <br />
+            yang dapat diandalkan. <span class="text-gray-400">~itu saja</span>
+          </div>
+          <div class="text-gray-500">
+            <router-link
+              class="hover:text-gray-700 focus:text-yellow-300"
+              to="/about"
+            >
+              Web
+            </router-link>
+            &#8728;
+            <router-link
+              class="hover:text-gray-700 focus:text-yellow-300"
+              to="/about"
+            >
+              Podcast
+            </router-link>
+            &#8728;
+            <router-link
+              class="hover:text-gray-700 focus:text-yellow-300"
+              to="/about"
+            >
+              Karya
+            </router-link>
+            &#8728; <br />
+            <router-link
+              class="hover:text-gray-700 focus:text-yellow-300"
+              to="/about"
+            >
+              Dukung
+            </router-link>
+            &#8728;
+            <router-link
+              class="hover:text-gray-700 focus:text-yellow-300"
+              to="/about"
+            >
+              Tentang
+            </router-link>
+          </div>
+          <div class="flex text-gray-500 pt-4 w-24 justify-between">
+            <a
+              class="hover:text-gray-700 focus:text-yellow-300"
+              href="https://github.com/imotD"
+            >
+              <ph-github-logo :size="22" />
+            </a>
+            <a
+              class="hover:text-gray-700 focus:text-yellow-300"
+              href="mailto:tommy.alhamra@gmail.com"
+            >
+              <ph-envelope-simple :size="22" />
+            </a>
+            <a
+              class="hover:text-gray-700 focus:text-yellow-300"
+              href="https://id.linkedin.com/in/tommy-alhamra-217112151"
+            >
+              <ph-linkedin-logo :size="22" />
+            </a>
+          </div>
+        </div>
+        <div class="m-auto">
+          <img src="@/assets/mask-logo.png" alt="" />
+        </div>
+      </div>
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
+import Footer from "@/components/Footer.vue";
+import { PhEnvelopeSimple, PhLinkedinLogo, PhGithubLogo } from "phosphor-vue";
+
 export default {
   name: "Home",
-  components: {},
+  components: {
+    PhEnvelopeSimple,
+    PhLinkedinLogo,
+    PhGithubLogo,
+    Footer,
+  },
+  data() {
+    return {
+      menu: [
+        {
+          id: 1,
+          title: "Web",
+          link: "/about",
+        },
+        {
+          id: 2,
+          title: "Podcast",
+          link: "/about",
+        },
+        {
+          id: 3,
+          title: "Karya",
+          link: "/about",
+        },
+        {
+          id: 4,
+          title: "Dukung",
+          link: "/about",
+        },
+        {
+          id: 5,
+          title: "Tentang",
+          link: "/about",
+        },
+      ],
+    };
+  },
 };
 </script>
