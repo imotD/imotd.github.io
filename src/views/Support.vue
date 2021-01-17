@@ -1,6 +1,6 @@
-<template>
+  <template>
   <div>
-    About page
+    Support page
   </div>
 </template>
 

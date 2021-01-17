@@ -1,6 +1,6 @@
 <template>
   <div>
-    About page
+    404 - Masih dalam perbaikan bro
   </div>
 </template>
 

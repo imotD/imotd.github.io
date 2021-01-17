@@ -1,49 +1,49 @@
 <template>
   <div class="home">
-    <div class="container mx-auto px-10">
+    <div class="container mx-auto px-32">
       <div class="grid sm:grid-cols-2 gap-4 flex items-center home__content">
         <div class="">
           <p class="text-4xl font-bold tracking-wider">
             Hai, Saya
-            <span class="hover:text-yellow-400 font-black"> ImotD </span>.
+            <span class="text-yellow-400 font-black">ImotD</span>.
           </p>
           <div class="py-8 tracking-wide">
             salam kenal, saya suka buat sesuatu. <br />
             mimpi saya menjadi frontend developer <br />
-            yang dapat diandalkan. <span class="text-gray-400">~itu saja</span>
+            yang dapat diandalkan. <span class="text-gray-300">~itu saja</span>
           </div>
           <div class="text-gray-500">
             <router-link
               class="hover:text-gray-700 focus:text-yellow-300"
-              to="/about"
+              to="/portofolio"
             >
-              Web
+              Portofolio
             </router-link>
             &#8728;
             <router-link
               class="hover:text-gray-700 focus:text-yellow-300"
-              to="/about"
+              to="/podcast"
             >
               Podcast
             </router-link>
             &#8728;
             <router-link
               class="hover:text-gray-700 focus:text-yellow-300"
-              to="/about"
+              to="/karya"
             >
               Karya
             </router-link>
             &#8728; <br />
             <router-link
               class="hover:text-gray-700 focus:text-yellow-300"
-              to="/about"
+              to="/dukung"
             >
               Dukung
             </router-link>
             &#8728;
             <router-link
               class="hover:text-gray-700 focus:text-yellow-300"
-              to="/about"
+              to="/tentang"
             >
               Tentang
             </router-link>

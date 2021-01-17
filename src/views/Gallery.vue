@@ -1,6 +1,6 @@
 <template>
   <div>
-    About page
+    Gallery page
   </div>
 </template>
 
