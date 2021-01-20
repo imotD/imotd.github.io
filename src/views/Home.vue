@@ -5,7 +5,7 @@
         <div class="">
           <p class="text-4xl font-bold tracking-wider">
             Hai, Saya
-            <span class="text-yellow-400 font-black">ImotD</span>.
+            <span class="text-yellow-400 font-black" title="Tommy Alhamra">ImotD</span>.
           </p>
           <div class="py-8 tracking-wide">
             salam kenal, saya suka buat sesuatu. <br />

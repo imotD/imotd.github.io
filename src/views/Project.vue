@@ -1,6 +1,13 @@
 <template>
-  <div class="container mx-auto px-32 pt-24">
-    <h1 class="text-5xl font-black tracking-wide pb-10">Portofolio</h1>
+  <div class="container mx-auto px-32 pt-12">
+    <div class="pb-10">
+      <h1 class="text-5xl font-black tracking-wide">Portofolio</h1>
+      <span class="font-light tracking-wide">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+        adipisci, facere cum error eum magni neque rerum dolores culpa, nihil
+        excepturi nulla rem! Corporis non ullam dolore culpa dolores amet.
+      </span>
+    </div>
     <main>
       <router-link>
         <div>

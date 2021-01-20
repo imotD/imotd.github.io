@@ -5,7 +5,7 @@ import Home from "../views/Home.vue";
 // import Gallery from "../views/Gallery.vue";
 // import Podcast from "../views/Podcast.vue";
 // import Support from "../views/Support.vue";
-// import Project from "../views/Project.vue";
+import Project from "../views/Project.vue";
 import NotFound from "../views/404.vue";
 
 Vue.use(VueRouter);
@@ -36,11 +36,11 @@ const routes = [
   //   name: "Support",
   //   component: Support,
   // },
-  // {
-  //   path: "/portofolio",
-  //   name: "Project",
-  //   component: Project,
-  // },
+  {
+    path: "/portofolio",
+    name: "Project",
+    component: Project,
+  },
   {
     path: "*",
     name: "NotFound",
