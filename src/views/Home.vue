@@ -5,11 +5,11 @@
         <div class="">
           <p class="text-4xl font-bold tracking-wider">
             Hai, Saya
-            <span class="font-black bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-purple-300" title="Tommy Alhamra">ImotD</span>.
+            <span class="font-black bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-yellow-500" title="Tommy Alhamra">ImotD</span>.
           </p>
           <div class="py-8 tracking-wide">
-            salam kenal, saya suka buat sesuatu. <br />
-            mimpi saya menjadi frontend developer <br />
+            salam kenal 👋, saya suka buat sesuatu. <br />
+            mimpi saya menjadi frontend developer✨ <br />
             yang dapat diandalkan. <span class="text-gray-300">~itu saja</span>
           </div>
           <div class="text-gray-500">
