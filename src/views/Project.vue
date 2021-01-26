@@ -21,13 +21,21 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
             distinctio quae dicta incidunt sunt quos rem iure impedit non vel?
           </span>
-          <div></div>
+          <div class="flex">
+            <div class="h-10 w-10 bg-gray-100 rounded">
+              <img class="m-auto" src="@/assets/img/logo/logo-vuejs.png" alt="tech" />
+            </div>
+          </div>
           <router-link to="/test">
             Selengkapnya
           </router-link>
         </div>
         <div class="col-span-7 bg-blue-100 rounded-tr-lg">
-          <img class="h-36 mt-14 w-4/5 bg-green-800 m-auto" src="" alt="img" />
+          <div
+            class="h-36 mt-14 w-4/5 bg-cover bg-center m-auto bg-yellow-100 rounded-t"
+            :style="bgProject"
+          ></div>
+          <!-- <img class="h-36 mt-14 w-4/5 bg-green-800 m-auto" src="@/assets/img/project/p-gitmaster.png" alt="img" /> -->
         </div>
       </div>
     </main>
@@ -43,7 +51,11 @@ export default {
     Footer,
   },
   data() {
-    return {};
+    return {
+      bgProject: {
+        backgroundImage: `url(${require("@/assets/img/project/p-gitmaster.png")})`,
+      },
+    };
   },
 };
 </script>
