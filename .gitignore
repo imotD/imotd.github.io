@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/src/assets/css/style.css.map
+/src/assets/css/style.scss
 deploy.sh
 
 
