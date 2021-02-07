@@ -6,7 +6,7 @@
           <p class="text-4xl font-bold tracking-wider">
             Hai, Saya
             <span
-              class="font-black bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-yellow-500"
+              class="font-black font-black"
               title="Tommy Alhamra"
             >
               ImotD
@@ -14,39 +14,68 @@
           </p>
           <div class="py-8 tracking-wide">
             salam kenal 👋, saya suka buat sesuatu. <br />
-            mimpi saya menjadi frontend developer✨ <br />
+            mimpi saya menjadi frontend developer <br />
             yang dapat diandalkan. <span class="text-gray-300">~itu saja</span>
           </div>
           <div class="text-gray-500">
-            <router-link class="hover:text-black tolink" to="/portofolio" title="Project yang saya Buat">
+            <router-link
+              class="hover:text-black tolink"
+              to="/portofolio"
+              title="Project yang saya Buat"
+            >
               Portofolio
             </router-link>
             &#8728;
-            <router-link class="hover:text-black tolink" to="/podcast" title="Mengasah Komunikasi">
+            <router-link
+              class="hover:text-black tolink"
+              to="/podcast"
+              title="Mengasah Komunikasi"
+            >
               Podcast
             </router-link>
             &#8728;
-            <router-link class="hover:text-black tolink" to="/karya" title="Gaya Geni">
+            <router-link
+              class="hover:text-black tolink"
+              to="/karya"
+              title="Gaya Geni"
+            >
               Karya
             </router-link>
             &#8728; <br />
-            <router-link class="hover:text-black tolink" to="/dukung" title="Traktir Kopi untuk saya">
+            <router-link
+              class="hover:text-black tolink"
+              to="/dukung"
+              title="Traktir Kopi untuk saya"
+            >
               Dukung
             </router-link>
             &#8728;
-            <router-link class="hover:text-black tolink" to="/tentang" title="Orang Biasa gak Special pake Telor">
+            <router-link
+              class="hover:text-black tolink"
+              to="/tentang"
+              title="Orang Biasa gak Special pake Telor"
+            >
               Tentang
             </router-link>
           </div>
           <div class="flex text-gray-500 pt-4 w-24 justify-between">
-            <a class="hover:text-black" href="https://github.com/imotD">
+            <a
+              class="hover:text-black"
+              target="_blank"
+              href="https://github.com/imotD"
+            >
               <ph-github-logo :size="22" />
             </a>
-            <a class="hover:text-black" href="mailto:tommy.alhamra@gmail.com">
+            <a
+              class="hover:text-black"
+              target="_blank"
+              href="mailto:tommy.alhamra@gmail.com"
+            >
               <ph-envelope-simple :size="22" />
             </a>
             <a
               class="hover:text-black"
+              target="_blank"
               href="https://id.linkedin.com/in/tommy-alhamra-217112151"
             >
               <ph-linkedin-logo :size="22" />
@@ -54,7 +83,11 @@
           </div>
         </div>
         <div class="m-auto">
-          <img src="@/assets/mask-logo.png" alt="Dottom Logo" title="Branding" />
+          <img
+            src="@/assets/mask-logo.png"
+            alt="Dottom Logo"
+            title="Branding"
+          />
         </div>
       </div>
       <Footer />
