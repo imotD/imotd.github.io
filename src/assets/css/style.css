@@ -21,7 +21,7 @@
 
 .tolink::after {
   content: "  ";
-  background-color: #ffff0099;
+  background-color: #0ac6d052;
   border-radius: 2px;
   position: absolute;
   bottom: 0;

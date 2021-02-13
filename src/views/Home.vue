@@ -2,13 +2,10 @@
   <div class="home">
     <div class="container mx-auto px-32">
       <div class="grid sm:grid-cols-2 gap-4 flex items-center home__content">
-        <div class="">
+        <div>
           <p class="text-4xl font-bold tracking-wider">
             Hai, Saya
-            <span
-              class="font-black font-black"
-              title="Tommy Alhamra"
-            >
+            <span class="font-black font-black" title="Tommy Alhamra">
               ImotD
             </span>
           </p>
@@ -18,45 +15,30 @@
             yang dapat diandalkan. <span class="text-gray-300">~itu saja</span>
           </div>
           <div class="text-gray-500">
-            <router-link
-              class="hover:text-black tolink"
-              to="/portofolio"
-              title="Project yang saya Buat"
-            >
-              Portofolio
-            </router-link>
-            &#8728;
-            <router-link
-              class="hover:text-black tolink"
-              to="/podcast"
-              title="Mengasah Komunikasi"
-            >
-              Podcast
-            </router-link>
-            &#8728;
-            <router-link
-              class="hover:text-black tolink"
-              to="/karya"
-              title="Gaya Geni"
-            >
-              Karya
-            </router-link>
-            &#8728; <br />
-            <router-link
-              class="hover:text-black tolink"
-              to="/dukung"
-              title="Traktir Kopi untuk saya"
-            >
-              Dukung
-            </router-link>
-            &#8728;
-            <router-link
-              class="hover:text-black tolink"
-              to="/tentang"
-              title="Orang Biasa gak Special pake Telor"
-            >
-              Tentang
-            </router-link>
+            <p>
+              <span v-for="m in menus[0].up" :key="m.id">
+                <router-link
+                  class="hover:text-black tolink"
+                  :to="m.link"
+                  :title="m.note"
+                >
+                  {{ m.title }}
+                </router-link>
+                &#8728;
+              </span>
+            </p>
+            <p>
+              <span v-for="g in menus[1].down" :key="g.id">
+                <router-link
+                  class="hover:text-black tolink"
+                  :title="g.note"
+                  :to="g.link"
+                >
+                  {{ g.title }}
+                </router-link>
+                &#8728;
+              </span>
+            </p>
           </div>
           <div class="flex text-gray-500 pt-4 w-24 justify-between">
             <a
@@ -109,31 +91,44 @@ export default {
   },
   data() {
     return {
-      menu: [
+      menus: [
         {
-          id: 1,
-          title: "Web",
-          link: "/about",
+          up: [
+            {
+              id: 1,
+              title: "Portofolio",
+              link: "/portofolio",
+              note: "Project yang saya Buat",
+            },
+            {
+              id: 2,
+              title: "Podcast",
+              link: "/podcast",
+              note: "Mengasah Komunikasi",
+            },
+            {
+              id: 3,
+              title: "Karya",
+              link: "/karya",
+              note: "Gaya Geni",
+            },
+          ],
         },
         {
-          id: 2,
-          title: "Podcast",
-          link: "/about",
-        },
-        {
-          id: 3,
-          title: "Karya",
-          link: "/about",
-        },
-        {
-          id: 4,
-          title: "Dukung",
-          link: "/about",
-        },
-        {
-          id: 5,
-          title: "Tentang",
-          link: "/about",
+          down: [
+            {
+              id: 4,
+              title: "Dukung",
+              link: "/dukung",
+              note: "Traktir Kopi untuk saya",
+            },
+            {
+              id: 5,
+              title: "Tentang",
+              link: "/tentang",
+              note: "Orang Biasa gak Special pake Telor",
+            },
+          ],
         },
       ],
     };
