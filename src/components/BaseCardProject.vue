@@ -8,7 +8,15 @@
       <h3 class="font-black text-2xl tracking-wider leading-loose">
         {{ title }}
       </h3>
-      <div class="font-light line-clamp overflow-hidden">
+      <div
+        class="font-light"
+        style="
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+        "
+      >
         {{ description }}
       </div>
       <div class="flex flex-row gap-2 mt-3">
