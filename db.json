@@ -6,7 +6,7 @@
       "title":"Git Master",
       "description":" Vue.js adalah kerangka kerja JavaScript yang bersifat progresif, bersumber terbuka untuk membangun antarmuka pengguna. Integrasi ke dalam proyek yang menggunakan pustaka JavaScript lainnya mudah dilakukan dengan Vue karena ia dirancang untuk bisa berjalan hanya di beberapa bagian halaman web",
       "icon":[
-        "vue.png"
+        "vuejs.png"
       ],
       "link":"/test",
       "image":"gitmaster.png"
