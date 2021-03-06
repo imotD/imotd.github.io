@@ -26,7 +26,7 @@
         >
           <img
             class="m-auto"
-            :src="require(`../assets/img/logo/${icon}`)"
+            :src="require(`@/assets/img/logo/${icon}`)"
             :alt="icon"
           />
         </div>
@@ -40,8 +40,11 @@
     <div class="col-span-7 bg-blue-100 rounded-tr-lg relative">
       <!-- img -->
       <div
-        class="absolute bottom-0 m-auto left-0 right-0 h-60 mt-14 w-4/5 bg-cover bg-center m-auto bg-yellow-100 rounded-t"
-        :style="image"
+        class="absolute bottom-0 m-auto left-0 right-0 h-60 mt-14 w-4/5 bg-cover bg-center m-auto bg-yellow-100 rounded-t "
+        :style="{
+          'background-image':
+            'url(' + require('@/assets/img/project/' + image) + ')',
+        }"
       ></div>
       <!-- <img class="h-36 mt-14 w-4/5 bg-green-800 m-auto" src="" alt="img" /> -->
     </div>

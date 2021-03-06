@@ -11,16 +11,14 @@
       </div>
       <main class="mb-20">
         <BaseCardProject
-          category="Proyek Pribadi"
-          title="Git Master"
-          description=" Vue.js adalah kerangka kerja JavaScript yang bersifat progresif,
-              bersumber terbuka untuk membangun antarmuka pengguna. Integrasi ke
-              dalam proyek yang menggunakan pustaka JavaScript lainnya mudah
-              dilakukan dengan Vue karena ia dirancang untuk bisa berjalan hanya
-              di beberapa bagian halaman web"
-          icon="vuejs.png"
-          link="/test"
-          :image="bgProject"
+          v-for="(p, i) in datas"
+          :key="i.id"
+          :category="p.category"
+          :title="p.title"
+          :description="p.description"
+          :icon="p.icon[i]"
+          :link="p.link"
+          :image="p.image"
         />
       </main>
       <BaseIcon nav="icons icons--left" title="Back" @btn="back()">
@@ -51,9 +49,7 @@ export default {
   },
   data() {
     return {
-      bgProject: {
-        backgroundImage: `url(${require("@/assets/img/project/p-gitmaster.png")})`,
-      },
+      datas: [],
     };
   },
   methods: {
@@ -63,6 +59,12 @@ export default {
     next() {
       this.$router.push("/karya");
     },
+  },
+  mounted() {
+    this.$http
+      .get("https://my-json-server.typicode.com/imotD/imotD.github.io/db")
+      // .get("https://api.coindesk.com/v1/bpi/currentprice.json")
+      .then((res) => (this.datas = res.data.project));
   },
 };
 </script>
