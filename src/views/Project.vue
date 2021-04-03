@@ -1,8 +1,8 @@
 <template>
-  <div class="project">
-    <div class="container mx-auto px-32 pt-12">
+  <div class="">
+    <div class="container mx-auto px-32 pt-5">
       <div class="pb-10">
-        <h1 class="text-5xl font-black tracking-wide">Portofolio</h1>
+        <h1 class="text-5xl font-black tracking-wide mb-5">Portofolio</h1>
         <span class="font-light tracking-wide">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
           adipisci, facere cum error eum magni neque rerum dolores culpa, nihil
