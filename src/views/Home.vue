@@ -1,17 +1,17 @@
 <template>
-  <div class="home">
-    <div class="container mx-auto px-32">
-      <div class="grid sm:grid-cols-2 gap-4 flex items-center home__content">
-        <div>
+  <div class="home flex flex-col items-center justify-center lg:mx-52 md:mx-20">
+    <div class="mx-auto container">
+      <div class="lg:grid grid-flow-col grid-cols-2">
+        <div class="text-center sm:text-left">
           <p class="text-4xl font-bold tracking-wider">
             Hai, Saya
             <span class="font-black font-black" title="Tommy Alhamra">
-              ImotD
+              Tommy
             </span>
           </p>
           <div class="py-8 tracking-wide">
             salam kenal 👋, saya suka buat sesuatu. <br />
-            mimpi saya menjadi frontend developer <br />
+            mimpi saya saat ini menjadi frontend developer <br />
             yang dapat diandalkan. <span class="text-gray-300">~itu saja</span>
           </div>
           <div class="text-gray-500">
@@ -40,7 +40,7 @@
               </span>
             </p>
           </div>
-          <div class="flex text-gray-500 pt-4 w-24 justify-between">
+          <div class="flex m-auto sm:m-0 text-gray-500 pt-4 w-24 justify-between">
             <a
               class="hover:text-black"
               target="_blank"
@@ -64,7 +64,7 @@
             </a>
           </div>
         </div>
-        <div class="m-auto">
+        <div class="m-auto hidden sm:inline">
           <img
             src="@/assets/mask-logo.png"
             alt="Dottom Logo"

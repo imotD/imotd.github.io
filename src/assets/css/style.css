@@ -16,12 +16,11 @@
 
 .tolink:hover::after {
   top: 0;
-  color: black;
 }
 
 .tolink::after {
   content: "  ";
-  background-color: #0ac6d052;
+  background-color: #ffff0085;
   border-radius: 2px;
   position: absolute;
   bottom: 0;
@@ -47,11 +46,7 @@
 }
 
 .home {
-  min-height: 100vh;
-}
-
-.home__content {
-  height: 90vh;
+  height: 100vh;
 }
 
 .project {

@@ -1,9 +1,16 @@
 <template>
   <div
-    class="flex items-center justify-center justify-end text-xs text-gray-400"
+    class="
+      footer
+      flex
+      items-center
+      justify-center        
+      text-xs text-gray-400
+      py-3
+    "
   >
     <span class="pr-2">&copy;2021</span>
-    <img class="w-8" src="@/assets/outline-logo.svg" alt="dottom-logo" />
+    <img class="w-8" src="@/assets/outline-logo.svg" alt="logo" />
     <span class="pl-2">dottom.</span>
   </div>
 </template>

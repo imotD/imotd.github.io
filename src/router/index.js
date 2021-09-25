@@ -6,6 +6,7 @@ import Home from "../views/Home.vue";
 // import Podcast from "../views/Podcast.vue";
 // import Support from "../views/Support.vue";
 import Project from "../views/Project.vue";
+import ProjectDetails from "../views/ProjectDetails.vue";
 import NotFound from "../views/404.vue";
 
 Vue.use(VueRouter);
@@ -40,6 +41,11 @@ const routes = [
     path: "/portofolio",
     name: "Project",
     component: Project,
+  },
+  {
+    path: "/portofolio/episode",
+    name: "ProjectDetails",
+    component: ProjectDetails,
   },
   {
     path: "*",
