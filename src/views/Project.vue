@@ -56,9 +56,9 @@ export default {
   created() {
     const contentful = require("contentful");
     const client = contentful.createClient({
-      space: process.env.VUE_APP_SPACE,
-      environment: process.env.VUE_APP_ENVI,
-      accessToken: process.env.VUE_APP_TOKEN,
+      space: 'i3y6mpxci9qy',
+      environment: 'master',
+      accessToken: 'EqpCCpPDhk2o9LQwDVgbR_clnf8jY7avy6-ZnEUqPn4',
     });
     client
       .getEntries()
