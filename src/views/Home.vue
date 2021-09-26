@@ -40,7 +40,9 @@
               </span>
             </p>
           </div>
-          <div class="flex m-auto sm:m-0 text-gray-500 pt-4 w-24 justify-between">
+          <div
+            class="flex m-auto sm:m-0 text-gray-500 pt-4 w-24 justify-between"
+          >
             <a
               class="hover:text-black"
               target="_blank"

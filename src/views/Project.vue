@@ -9,16 +9,17 @@
           excepturi nulla rem! Corporis non ullam dolore culpa dolores amet.
         </span>
       </div>
+
       <main class="mb-20">
         <BaseCardProject
-          v-for="(p, i) in datas"
+          v-for="(item, i) in data"
           :key="i.id"
-          :category="p.category"
-          :title="p.title"
-          :description="p.description"
-          :icon="p.icon[i]"
-          :link="p.link"
-          :image="p.image"
+          :id="item.fields.id"
+          :category="item.fields.category"
+          :title="item.fields.title"
+          :description="item.fields.description.content[0]"
+          :icon="item.fields.icon"
+          :image="item.fields.image"
         />
       </main>
       <BaseIcon nav="icons icons--left" title="Back" @btn="back()">
@@ -49,8 +50,23 @@ export default {
   },
   data() {
     return {
-      datas: [],
+      data: null,
     };
+  },
+  created() {
+    const contentful = require("contentful");
+    const client = contentful.createClient({
+      space: process.env.VUE_APP_SPACE,
+      environment: process.env.VUE_APP_ENVI,
+      accessToken: process.env.VUE_APP_TOKEN,
+    });
+    client
+      .getEntries()
+      .then((res) => {
+        this.data = res.items;
+        console.log(this.data);
+      })
+      .catch((err) => console.log(err));
   },
   methods: {
     back() {
