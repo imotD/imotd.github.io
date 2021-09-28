@@ -56,15 +56,14 @@ export default {
   created() {
     const contentful = require("contentful");
     const client = contentful.createClient({
-      space: 'i3y6mpxci9qy',
-      environment: 'master',
-      accessToken: 'EqpCCpPDhk2o9LQwDVgbR_clnf8jY7avy6-ZnEUqPn4',
+      space: "i3y6mpxci9qy",
+      environment: "master",
+      accessToken: "EqpCCpPDhk2o9LQwDVgbR_clnf8jY7avy6-ZnEUqPn4",
     });
     client
       .getEntries()
       .then((res) => {
         this.data = res.items;
-        console.log(this.data);
       })
       .catch((err) => console.log(err));
   },
@@ -76,12 +75,11 @@ export default {
       this.$router.push("/karya");
     },
   },
-  mounted() {
-    this.$http
-      .get("https://my-json-server.typicode.com/imotD/imotD.github.io/db")
-      // .get("https://api.coindesk.com/v1/bpi/currentprice.json")
-      .then((res) => (this.datas = res.data.project));
-  },
+  // mounted() {
+  //   this.$http
+  //     .get("https://my-json-server.typicode.com/imotD/imotD.github.io/db")
+  //     .then((res) => (this.datas = res.data.project));
+  // },
 };
 </script>
 

@@ -3,15 +3,17 @@
     class="
       grid grid-cols-12
       border-2
-      hover:border-blue-500
+      hover:border-yellow-300
       hover:shadow-lg
       rounded-md
       h-80
       relative
       mb-5
+      bg-blue-100
+      hover:bg-yellow-300
     "
   >
-    <div class="col-span-5 p-5 pb-10">
+    <div class="col-span-5 bg-white p-5 pb-10">
       <p class="text-gray-500 tracking-wider">{{ category }}</p>
       <h3 class="font-black text-2xl tracking-wider leading-loose">
         {{ title }}
@@ -63,7 +65,7 @@
         </router-link>
       </div>
     </div>
-    <div class="col-span-7 bg-blue-100 rounded-tr-lg relative">
+    <div class="col-span-7 rounded-tr-lg relative">
       <div v-for="(img, i) in image" :key="i">
         <div
           v-for="(item, im) in img"

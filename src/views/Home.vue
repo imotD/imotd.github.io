@@ -1,12 +1,12 @@
 <template>
   <div class="home flex flex-col items-center justify-center lg:mx-52 md:mx-20">
     <div class="mx-auto container">
-      <div class="lg:grid grid-flow-col grid-cols-2">
+      <div class="md:grid grid-flow-col grid-cols-2">
         <div class="text-center sm:text-left">
           <p class="text-4xl font-bold tracking-wider">
-            Hai, Saya
+            Halo. <br /> Saya
             <span class="font-black font-black" title="Tommy Alhamra">
-              Tommy
+              Tommy.
             </span>
           </p>
           <div class="py-8 tracking-wide">
