@@ -1,7 +1,7 @@
 <template>
   <div
     class="
-      footer
+      
       flex
       items-center
       justify-center        
@@ -10,8 +10,8 @@
     "
   >
     <span class="pr-2">&copy;2021</span>
-    <img class="w-8" src="@/assets/outline-logo.svg" alt="logo" />
-    <span class="pl-2">dottom.</span>
+    <img class="w-5" src="@/assets/outline-logo.svg" alt="logo" />
+    <span class="pl-2">imotD.</span>
   </div>
 </template>
 

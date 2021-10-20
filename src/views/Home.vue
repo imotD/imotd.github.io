@@ -4,7 +4,8 @@
       <div class="md:grid grid-flow-col grid-cols-2">
         <div class="text-center sm:text-left">
           <p class="text-4xl font-bold tracking-wider">
-            Halo. <br /> Saya
+            Halo. <br />
+            Saya
             <span class="font-black font-black" title="Tommy Alhamra">
               Tommy.
             </span>
@@ -74,7 +75,7 @@
           />
         </div>
       </div>
-      <Footer />
+      <Footer class="footer"/>
     </div>
   </div>
 </template>
@@ -137,3 +138,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+</style>

@@ -30,7 +30,7 @@
         <ph-arrow-u-down-right :size="35" />
       </BaseIcon>
     </div>
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 
@@ -38,13 +38,13 @@
 import BaseIcon from "@/components/BaseIcon.vue";
 import BaseCardProject from "@/components/BaseCardProject.vue";
 import { PhArrowUUpLeft, PhArrowUDownRight } from "phosphor-vue";
-// import Footer from "@/components/Footer.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: "Project",
   components: {
     BaseIcon,
     BaseCardProject,
-    // Footer,
+    Footer,
     PhArrowUUpLeft,
     PhArrowUDownRight,
   },
@@ -75,11 +75,6 @@ export default {
       this.$router.push("/karya");
     },
   },
-  // mounted() {
-  //   this.$http
-  //     .get("https://my-json-server.typicode.com/imotD/imotD.github.io/db")
-  //     .then((res) => (this.datas = res.data.project));
-  // },
 };
 </script>
 
