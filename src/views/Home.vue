@@ -4,16 +4,19 @@
       <div class="md:grid grid-flow-col grid-cols-2">
         <div class="text-center sm:text-left">
           <p class="text-4xl font-bold tracking-wider">
-            Halo. <br />
+            <span class="text-lg font-normal text-gray-500">
+              Halo, Dunia
+            </span>
+            <br />
             Saya
             <span class="font-black font-black" title="Tommy Alhamra">
               Tommy.
             </span>
           </p>
           <div class="py-8 tracking-wide">
-            salam kenal 👋, saya suka buat sesuatu. <br />
-            mimpi saya saat ini menjadi frontend developer <br />
-            yang dapat diandalkan. <span class="text-gray-300">~itu saja</span>
+            Salam kenal 👋, saya suka buat sesuatu. <br />
+            Mimpi saya saat ini menjadi <i>Frontend Developer</i> <br />
+            yang dapat diandalkan. <span class="text-gray-300">~hoho</span>
           </div>
           <div class="text-gray-500">
             <p>
@@ -75,7 +78,7 @@
           />
         </div>
       </div>
-      <Footer class="footer"/>
+      <Footer class="footer" />
     </div>
   </div>
 </template>
