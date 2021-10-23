@@ -1,5 +1,7 @@
 <template>
   <div
+    style="cursor: pointer;"
+    @click="openProject(id)"
     class="
       grid grid-cols-12
       border-2
@@ -56,14 +58,14 @@
           />
         </div>
       </div>
-      <div class="absolute bottom-0 p-2 pb-5">
+      <!-- <div class="absolute bottom-0 p-2 pb-5">
         <router-link
-          :to="`portofolio/${id}`"
+          :to="`project/${id}`"
           class="flex gap-5 hover:text-blue-500"
         >
           Selengkapnya <ph-arrow-right :size="22" />
         </router-link>
-      </div>
+      </div> -->
     </div>
     <div class="col-span-7 rounded-tr-lg relative">
       <div v-for="(img, i) in image" :key="i">
@@ -94,15 +96,20 @@
 </template>
 
 <script>
-import { PhArrowRight } from "phosphor-vue";
+// import { PhArrowRight } from "phosphor-vue";
 export default {
   name: "BaseCardProject",
-  components: {
-    PhArrowRight,
-  },
+  // components: {
+  //   PhArrowRight,
+  // },
   props: ["title", "description", "category", "image", "icon", "id"],
   data() {
     return {};
+  },
+  methods: {
+    openProject(id) {
+      this.$router.push(`project/${id}`);
+    },
   },
 };
 </script>

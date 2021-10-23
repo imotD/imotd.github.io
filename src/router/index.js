@@ -38,12 +38,12 @@ const routes = [
   //   component: Support,
   // },
   {
-    path: "/portofolio",
+    path: "/project",
     name: "Project",
     component: Project,
   },
   {
-    path: "/portofolio/:id",
+    path: "/project/:id",
     name: "ProjectDetails",
     component: ProjectDetails,
   },

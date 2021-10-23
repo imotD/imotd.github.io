@@ -103,7 +103,7 @@ export default {
             {
               id: 1,
               title: "Portofolio",
-              link: "/portofolio",
+              link: "/project",
               note: "Project yang saya Buat",
             },
             {
