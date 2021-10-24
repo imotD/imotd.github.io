@@ -7,7 +7,7 @@
           Selamat Datang, di Galery Proyek yang pernah saya buat. Dan mungkin
           kebanyakan personal proyeknya ketimbang yang real dan orang-orang
           biasa menyebutnya Fake Project namun bagi saya itu adalah Mahakarya
-          ~hohoi.
+          <span class="text-gray-300">~hohoi</span>.
         </span>
       </div>
 
@@ -15,7 +15,7 @@
         <BaseCardProject
           v-for="(item, i) in data"
           :key="i.id"
-          :id="item.fields.id"
+          :id="item.sys.id"
           :category="item.fields.category"
           :title="item.fields.title"
           :description="item.fields.description.content[0]"
@@ -64,7 +64,7 @@ export default {
     client
       .getEntries()
       .then((res) => {
-        this.data = res.items;
+        this.data = res.items;        
       })
       .catch((err) => console.log(err));
   },

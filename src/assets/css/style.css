@@ -54,10 +54,16 @@
 }
 
 .project__sidebar {
-  background-image: url(https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80);
+  background-image: url(https://images.unsplash.com/photo-1553034545-32d4cd2168f1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80);
   background-size: cover;
   -o-object-fit: contain;
      object-fit: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.project__sidebar--profile {
+  background-image: url(../imotD.png);
   background-position: center;
   background-repeat: no-repeat;
 }
