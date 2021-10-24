@@ -33,10 +33,22 @@
       <div class="container py-9">
         <div>
           <h1 class="text-5xl font-black tracking-wide mb-5">
-            {{ data.title }}
+            <PuSkeleton width="350px" :loading="loading">
+              {{ data.title }}
+            </PuSkeleton>
           </h1>
-          <span class="font-light tracking-wide">
-            <!-- {{ data.description.content[0].content[0].value }} -->
+          <span
+            class="font-light tracking-wide"
+            v-for="(content, i) in data.description"
+            :key="i"
+          >
+            <PuSkeleton :loading="loading" :count="2">
+              <span v-for="(data, v) in content" :key="v">
+                <span v-for="(vs, x) in data.content" :key="x">
+                  {{ vs.value }}
+                </span>
+              </span>
+            </PuSkeleton>
           </span>
         </div>
         <div class="content mt-5">
@@ -44,10 +56,11 @@
             Tools
           </h3>
           <span class="font-light tracking-wide">
-            <div
-              v-for="(icon, i) in data.icon"
-              :key="i"
-              class="
+            <PuSkeleton :loading="loading" circle height="50px" width="50px">
+              <div
+                v-for="(icon, i) in data.icon"
+                :key="i"
+                class="
             h-11
             w-11
             bg-gray-100
@@ -56,20 +69,31 @@
             justify-items-center
             items-center
           "
-              :title="icon.fields.title"
-            >
-              <img
-                class="m-auto"
-                :src="icon.fields.file.url"
-                :alt="icon.fields.title"
-              />
-            </div>
+                :title="icon.fields.title"
+              >
+                <img
+                  class="m-auto"
+                  :src="icon.fields.file.url"
+                  :alt="icon.fields.title"
+                />
+              </div>
+            </PuSkeleton>
           </span>
           <h3 class="font-bold text-2xl tracking-wider leading-loose">
             Tujuan
           </h3>
-          <span class="font-light tracking-wide">
-            <!-- {{ data.goal.content[0].content[0].value }} -->
+          <span
+            class="font-light tracking-wide"
+            v-for="(content, i) in data.goal"
+            :key="i"
+          >
+            <PuSkeleton :loading="loading" :count="2">
+              <span v-for="(data, v) in content" :key="v">
+                <span v-for="(vs, x) in data.content" :key="x">
+                  {{ vs.value }}
+                </span>
+              </span>
+            </PuSkeleton>
           </span>
         </div>
       </div>
@@ -84,23 +108,27 @@ export default {
   data() {
     return {
       data: "",
+      loading: false,
     };
   },
-  created() {
+  async created() {
+    this.loading = true;
     const contentful = require("contentful");
     const client = contentful.createClient({
       space: "i3y6mpxci9qy",
       environment: "master",
-      // id: this.$route.params.id,
       accessToken: "EqpCCpPDhk2o9LQwDVgbR_clnf8jY7avy6-ZnEUqPn4",
     });
-    client
+    await client
       .getEntry(this.$route.params.id)
       .then((res) => {
+        this.loading = false;
         this.data = res.fields;
-        console.log(res.fields);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        this.loading = false;
+        console.log(err);
+      });
   },
 };
 </script>
