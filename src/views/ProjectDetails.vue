@@ -1,94 +1,75 @@
 <template>
   <div class="project grid grid-cols-12 gap-5 relative">
     <section
-      class="project__sidebar w-52 h-screen col-span-2 fixed bg-gradient-to-r from-green-400 to-blue-500 "
+      class="project__sidebar w-64 h-screen fixed bg-gradient-to-r from-green-400 to-blue-500 "
     >
       <div
-        class="rounded-full h-20 w-20 bg-black ring-4 absolute project__sidebar--profile"
+        class="rounded-full h-20 w-20 bg-black ring-4 ring-yellow-300 ring-opacity-50 shadow-xl absolute project__sidebar--profile"
       ></div>
       <div class="absolute bottom-0 right-0 left-0 mb-16">
         <ul>
           <li class="my-2">
-            <button class="p-2 flow-root bg-blue-100 w-40 m-auto rounded">
+            <a
+              :href="data.url"
+              target="_blank"
+              class="p-2 flow-root bg-red-300 w-40 m-auto rounded text-center"
+            >
               Live Demo
-            </button>
+            </a>
           </li>
           <li class="my-2">
-            <button class="p-2 flow-root bg-blue-100 w-40 m-auto rounded">
-              Workflow
-            </button>
+            <a
+              :href="data.case"
+              target="_blank"
+              class="p-2 flow-root bg-gray-300 w-40 m-auto rounded cursor-not-allowed text-center"
+            >
+              Case Studies
+            </a>
           </li>
         </ul>
       </div>
     </section>
-    <section class="project__content col-start-3 col-span-10">
-      <div class="p-5 pl-10">
+    <section class="project__content col-start-4 col-span-8">
+      <div class="container py-9">
         <div>
-          <h1 class="text-5xl font-black tracking-wide mb-5">Git Master</h1>
+          <h1 class="text-5xl font-black tracking-wide mb-5">
+            {{ data.title }}
+          </h1>
           <span class="font-light tracking-wide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            adipisci, facere cum error eum magni neque rerum dolores culpa,
-            nihil excepturi nulla rem! Corporis non ullam dolore culpa dolores
-            amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis ratione maiores est, id laudantium quia itaque? Unde eum
-            eius eos hic
+            <!-- {{ data.description.content[0].content[0].value }} -->
           </span>
         </div>
         <div class="content mt-5">
           <h3 class="font-bold text-2xl tracking-wider leading-loose">
-            Masalah
+            Tools
           </h3>
           <span class="font-light tracking-wide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            adipisci, facere cum error eum magni neque rerum dolores culpa,
-            nihil excepturi nulla rem! Corporis non ullam dolore culpa dolores
-            amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis ratione maiores est, id laudantium quia itaque? Unde eum
-            eius eos hic
+            <div
+              v-for="(icon, i) in data.icon"
+              :key="i"
+              class="
+            h-11
+            w-11
+            bg-gray-100
+            rounded
+            flex
+            justify-items-center
+            items-center
+          "
+              :title="icon.fields.title"
+            >
+              <img
+                class="m-auto"
+                :src="icon.fields.file.url"
+                :alt="icon.fields.title"
+              />
+            </div>
           </span>
           <h3 class="font-bold text-2xl tracking-wider leading-loose">
-            Pengguna & Audiens
+            Tujuan
           </h3>
           <span class="font-light tracking-wide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            adipisci, facere cum error eum magni neque rerum dolores culpa,
-            nihil excepturi nulla rem! Corporis non ullam dolore culpa dolores
-            amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis ratione maiores est, id laudantium quia itaque? Unde eum
-            eius eos hic
-          </span>
-          <h3 class="font-bold text-2xl tracking-wider leading-loose">
-            Peran & Tanggung Jawab
-          </h3>
-          <span class="font-light tracking-wide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            adipisci, facere cum error eum magni neque rerum dolores culpa,
-            nihil excepturi nulla rem! Corporis non ullam dolore culpa dolores
-            amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis ratione maiores est, id laudantium quia itaque? Unde eum
-            eius eos hic
-          </span>
-          <h3 class="font-bold text-2xl tracking-wider leading-loose">
-            Ruang Lingkup & Batasan
-          </h3>
-          <span class="font-light tracking-wide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            adipisci, facere cum error eum magni neque rerum dolores culpa,
-            nihil excepturi nulla rem! Corporis non ullam dolore culpa dolores
-            amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis ratione maiores est, id laudantium quia itaque? Unde eum
-            eius eos hic
-          </span>
-          <h3 class="font-bold text-2xl tracking-wider leading-loose">
-            Solusi
-          </h3>
-          <span class="font-light tracking-wide">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-            adipisci, facere cum error eum magni neque rerum dolores culpa,
-            nihil excepturi nulla rem! Corporis non ullam dolore culpa dolores
-            amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reiciendis ratione maiores est, id laudantium quia itaque? Unde eum
-            eius eos hic
+            <!-- {{ data.goal.content[0].content[0].value }} -->
           </span>
         </div>
       </div>
@@ -102,8 +83,24 @@ export default {
   components: {},
   data() {
     return {
-      // datas: [],
+      data: "",
     };
+  },
+  created() {
+    const contentful = require("contentful");
+    const client = contentful.createClient({
+      space: "i3y6mpxci9qy",
+      environment: "master",
+      // id: this.$route.params.id,
+      accessToken: "EqpCCpPDhk2o9LQwDVgbR_clnf8jY7avy6-ZnEUqPn4",
+    });
+    client
+      .getEntry(this.$route.params.id)
+      .then((res) => {
+        this.data = res.fields;
+        console.log(res.fields);
+      })
+      .catch((err) => console.log(err));
   },
 };
 </script>
