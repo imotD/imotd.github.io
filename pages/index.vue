@@ -8,19 +8,28 @@
           <h2 class="text--secondary">I like to make something.</h2>
           <div class="my-5">
             <span v-for="(menu, i) in menus" :key="i">
-              <NuxtLink
+              <v-btn
+                text
+                small
+                plain
                 :to="menu.to"
                 :title="menu.hint"
-                class="text-decoration-none white--text text--secondary"
+                class="pl-0"
               >
                 {{ menu.title }} &#8728;
-              </NuxtLink>
+              </v-btn>
             </span>
           </div>
           <div>
-            <v-btn icon small v-for="ic in sosmed" :key="ic" class="mr-2">
+            <a
+              v-for="ic in sosmed"
+              :key="ic"
+              :href="ic.link"
+              target="_blank"
+              class="mr-2 text-decoration-none white--text text--secondary"
+            >
               <v-icon>mdi-{{ ic.icon }}</v-icon>
-            </v-btn>
+            </a>
           </div>
         </v-col>
         <v-col>
@@ -38,9 +47,9 @@ export default {
     return {
       menus: [
         {
-          title: "Project",
-          to: "/project",
-          hint: "Project"
+          title: "Projects",
+          to: "/projects",
+          hint: "Projects"
         },
         {
           title: "Podcast",
@@ -50,27 +59,27 @@ export default {
         {
           title: "Dottom Style",
           to: "/art",
-          hint: "Suka Ngobrol"
+          hint: "Gallery Seni"
         },
         {
           title: "Support",
           to: "/support",
-          hint: "Suka Ngobrol"
+          hint: "Traktir Kopi untuk saya"
         },
         {
           title: "About",
           to: "/about",
-          hint: "Suka Ngobrol"
+          hint: "Saya Pemalu"
         }
       ],
       sosmed: [
         {
           icon: "github",
-          link: ""
+          link: "https://github.com/imotD"
         },
         {
           icon: "email",
-          link: ""
+          link: "mailto:tommy.alhamra@gmail.com"
         },
         {
           icon: "instagram",
@@ -78,7 +87,7 @@ export default {
         },
         {
           icon: "linkedin",
-          link: ""
+          link: "https://id.linkedin.com/in/tommy-alhamra-217112151 "
         }
       ]
     };

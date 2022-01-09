@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark class="app">
     <Nuxt />
   </v-app>
 </template>
@@ -8,9 +8,13 @@
 export default {
   name: "DefaultLayout",
   data() {
-    return {
-    
-    };
+    return {};
   }
 };
 </script>
+
+<style lang="scss">
+.app {
+  background-color: #111827 !important;
+}
+</style>
