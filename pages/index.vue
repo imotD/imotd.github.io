@@ -22,8 +22,8 @@
           </div>
           <div>
             <a
-              v-for="ic in sosmed"
-              :key="ic"
+              v-for="(ic, i) in sosmed"
+              :key="i"
               :href="ic.link"
               target="_blank"
               class="mr-2 text-decoration-none white--text text--secondary"

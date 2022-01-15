@@ -1,6 +1,9 @@
 <template>
   <v-app dark class="app">
-    <Nuxt />
+    <div v-if="$nuxt.isOffline">You are offline</div>
+    <div v-else>
+      <Nuxt />
+    </div>
   </v-app>
 </template>
 
