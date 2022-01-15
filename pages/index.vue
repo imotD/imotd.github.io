@@ -5,7 +5,7 @@
         <v-col class="hero--title">
           <span class="yellow--text">Hello World, I'm 👋</span>
           <h1 class="font-weight-black">Tommy Alhamra.</h1>
-          <h2 class="text--secondary">I like to make something.</h2>
+          <h2 id="sayHay" class="text--secondary"></h2>
           <div class="my-5">
             <span v-for="(menu, i) in menus" :key="i">
               <v-btn
@@ -16,24 +16,30 @@
                 :title="menu.hint"
                 class="pl-0"
               >
-                {{ menu.title }} &#8728;
+                {{ menu.title }} <span class="yellow--text">&#8728;</span>
               </v-btn>
             </span>
           </div>
           <div>
             <a
-              v-for="(ic, i) in sosmed"
+              v-for="(icon, i) in sosmed"
               :key="i"
-              :href="ic.link"
+              :href="icon.link"
               target="_blank"
-              class="mr-2 text-decoration-none white--text text--secondary"
+              class="mr-3 text-decoration-none hero--sosmed"
             >
-              <v-icon>mdi-{{ ic.icon }}</v-icon>
+              <v-icon class="hero--sosmed__icon"> mdi-{{ icon.icon }} </v-icon>
             </a>
           </div>
         </v-col>
         <v-col>
-          <img src="" alt="image" />
+          <!-- <img
+            id="vue"
+            src="../static/vuetify-logo.svg"
+            width="300"
+            alt="image"
+          />
+          <div class="circle"></div> -->
         </v-col>
       </v-row>
     </v-container>
@@ -79,11 +85,12 @@ export default {
         },
         {
           icon: "email",
-          link: "mailto:tommy.alhamra@gmail.com"
+          link: "mailto:tommy.alhamra@gmail.com",
+          hover: "email-open"
         },
         {
           icon: "instagram",
-          link: ""
+          link: "https://www.instagram.com/tommyalhamra/"
         },
         {
           icon: "linkedin",
@@ -91,6 +98,17 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    this.textSayhay();
+  },
+  methods: {
+    textSayhay() {
+      this.$gsap.to("#sayHay", {
+        duration: 1,
+        text: "I like to make something."
+      });
+    }
   }
 };
 </script>
@@ -106,6 +124,14 @@ $font-default: "Be Vietnam Pro", sans-serif;
     font-family: $font-title !important;
     h1 {
       font-size: 3.7rem;
+    }
+  }
+  &--sosmed {
+    &__icon {
+      color: #3a4867;
+      &:hover {
+        color: #90939b;
+      }
     }
   }
 }
