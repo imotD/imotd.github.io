@@ -2,10 +2,10 @@
   <div>
     <v-container class="hero">
       <v-row align="center">
-        <v-col class="hero--title">
+        <v-col @mouseover="cv.show = false" @mouseleave="cv.show = true">
           <span class="yellow--text">Hello World, I'm 👋</span>
-          <h1 class="font-weight-black">Tommy Alhamra.</h1>
-          <h2 id="sayHay" class="text--secondary"></h2>
+          <h1 class="font-weight-black text-h2 my-1">Tommy Alhamra.</h1>
+          <h2 id="sayHay" class="text--secondary hero--subtitle"></h2>
           <div class="my-5">
             <span v-for="(menu, i) in menus" :key="i">
               <v-btn
@@ -43,6 +43,24 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-tooltip top color="pink darken-4">
+      <template v-slot:activator="{ on, attrs }">
+        <v-fab-transition>
+          <v-btn
+            v-bind="attrs"
+            v-on="on"
+            v-show="cv.show"
+            color="pink"
+            fab
+            class="hero--button"
+            @click="goToCV(cv)"
+          >
+            <v-icon>mdi-rocket-launch-outline</v-icon>
+          </v-btn>
+        </v-fab-transition>
+      </template>
+      <span class="text-caption">{{ cv.msg }}</span>
+    </v-tooltip>
   </div>
 </template>
 
@@ -51,6 +69,11 @@ export default {
   name: "IndexPage",
   data() {
     return {
+      cv: {
+        show: true,
+        url: "https://github.com/imotD",
+        msg: "My Super CV"
+      },
       menus: [
         {
           title: "Projects",
@@ -108,31 +131,10 @@ export default {
         duration: 1,
         text: "I like to make something."
       });
+    },
+    goToCV(link) {
+      window.open(link.url, "_blank");
     }
   }
 };
 </script>
-
-<style lang="scss" scoped>
-$font-title: "Merriweather", serif;
-$font-default: "Be Vietnam Pro", sans-serif;
-
-.hero {
-  height: 100vh;
-  display: flex;
-  &--title {
-    font-family: $font-title !important;
-    h1 {
-      font-size: 3.7rem;
-    }
-  }
-  &--sosmed {
-    &__icon {
-      color: #3a4867;
-      &:hover {
-        color: #90939b;
-      }
-    }
-  }
-}
-</style>

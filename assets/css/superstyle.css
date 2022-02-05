@@ -7,4 +7,29 @@
   scroll-behavior: smooth;
   font-family: "Be Vietnam Pro", sans-serif;
 }
+
+.hero {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hero--subtitle {
+  font-family: "Merriweather", serif !important;
+}
+
+.hero--sosmed__icon {
+  color: #8e96a8 !important;
+}
+
+.hero--sosmed__icon:hover {
+  color: white !important;
+}
+
+.hero--button {
+  position: absolute !important;
+  bottom: 2rem;
+  right: 2rem;
+}
 /*# sourceMappingURL=superstyle.css.map */

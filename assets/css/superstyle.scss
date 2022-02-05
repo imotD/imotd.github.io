@@ -2,12 +2,35 @@
 
 $font-title: "Merriweather", serif;
 $font-default: "Be Vietnam Pro", sans-serif;
+$color-white: white;
+$color-blue-dark1: #8e96a8;
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: $font-default;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: $font-default;
 }
 
+.hero {
+  height: 100vh;
+  display: flex;
+
+  &--subtitle {
+    font-family: $font-title !important;
+  }
+  &--sosmed {
+    &__icon {
+      color: $color-blue-dark1 !important;
+      &:hover {
+        color: $color-white !important;
+      }
+    }
+  }
+  &--button {
+    position: absolute !important;
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
