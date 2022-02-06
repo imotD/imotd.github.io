@@ -71,8 +71,8 @@ h1 {
 }
 
 .project--card:hover {
-  background-color: #8e96a8 !important;
-  color: #0d131c !important;
+  background-color: #e91e6e !important;
+  color: yellow !important;
   font-weight: bold;
 }
 

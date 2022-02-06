@@ -6,6 +6,8 @@ $white: white;
 $blue-dark1: #8e96a8;
 $blue-dark2: #0d131c;
 $blue-dark3: #1f2f4e;
+$pink: #e91e6e;
+$yellow: yellow;
 
 * {
   padding: 0;
@@ -72,8 +74,8 @@ h1 {
     background-color: $blue-dark3 !important;
 
     &:hover {
-      background-color: $blue-dark1 !important;
-      color: $blue-dark2 !important;
+      background-color: $pink !important;
+      color: $yellow !important;
       font-weight: bold;
     }
 

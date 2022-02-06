@@ -3,7 +3,7 @@
     <Header />
     <v-container class="marginY">
       <v-row>
-        <v-col v-for="(data, index) in datas" :key="index" cols="6">
+        <v-col v-for="(data, index) in datas" :key="index" cols="12" sm="6">
           <v-card
             :to="`/projects/${data.title}`"
             class="project--card"
@@ -12,19 +12,32 @@
           >
             <v-container fluid>
               <v-row dense>
-                <v-col cols="8" class="pa-0">
-                  <div class="project--img__wrapper">
+                <v-col cols="12" md="8" class="pa-0">
+                  <div class="project--image__wrapper">
                     <v-img
-                      class="project--img__picture"
-                      lazy-src="https://picsum.photos/id/11/10/6"
+                      :lazy-src="require('/static/img-lazy.jpg')"
                       :src="require('/assets/img/2366.jpg')"
+                      class="project--image__picture"
                       height="300px"
                       width="100%"
                       alt="image"
-                    ></v-img>
+                    >
+                      <template v-slot:placeholder>
+                        <v-row
+                          class="fill-height ma-0"
+                          align="center"
+                          justify="center"
+                        >
+                          <v-progress-circular
+                            indeterminate
+                            color="grey lighten-5"
+                          ></v-progress-circular>
+                        </v-row>
+                      </template>
+                    </v-img>
                   </div>
                 </v-col>
-                <v-col cols="4" class="pa-4 my-1">
+                <v-col cols="12" md="4" class="pa-4 my-1">
                   <div>
                     <span
                       class="project--title__name letter-spc-1 text--disabled text-uppercase"
