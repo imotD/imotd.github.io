@@ -1,35 +1,58 @@
 <template>
-  <div>
+  <div class="project">
     <Header />
-    <v-container class="top">
+    <v-container class="marginY">
       <v-row>
         <v-col v-for="(data, index) in datas" :key="index" cols="6">
-          <v-card class="project" tile flat>
+          <v-card
+            :to="`/projects/${data.title}`"
+            class="project--card"
+            tile
+            flat
+          >
             <v-container fluid>
               <v-row dense>
-                <v-col cols="8">
-                  <v-img
-                    src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                    height="300px"
-                  ></v-img>
+                <v-col cols="8" class="pa-0">
+                  <div class="project--img__wrapper">
+                    <v-img
+                      class="project--img__picture"
+                      lazy-src="https://picsum.photos/id/11/10/6"
+                      :src="require('/assets/img/2366.jpg')"
+                      height="300px"
+                      width="100%"
+                      alt="image"
+                    ></v-img>
+                  </div>
                 </v-col>
                 <v-col cols="4" class="pa-4 my-1">
                   <div>
-                    <span class="text-caption text--secondary">Client</span>
-                    <p class="project--title mt-1">{{ data.client }}</p>
-                    <span class="text-caption text--secondary">Project</span>
-                    <p class="project--title mt-1">{{ data.title }}</p>
+                    <span
+                      class="project--title__name letter-spc-1 text--disabled text-uppercase"
+                    >
+                      Client
+                    </span>
+                    <p class="project--title mt-1 text-capitalize">
+                      {{ data.client }}
+                    </p>
+                    <span
+                      class="letter-spc-1 project--title__name text--disabled text-uppercase"
+                    >
+                      Project
+                    </span>
+                    <p class="project--title mt-1 text-capitalize">
+                      {{ data.title }}
+                    </p>
                   </div>
                   <div>
-                    <v-list-item class="pa-0 text--secondary">
+                    <v-list-item class="pa-0 text--disabled">
                       <v-list-item-content>
-                        <v-list-item-title
+                        <v-list-item-subtitle
                           v-for="list in data.category"
                           :key="list"
-                          class="text-caption"
+                          class="text-caption text-capitalize"
                         >
                           {{ list }}
-                        </v-list-item-title>
+                        </v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
                   </div>
@@ -40,12 +63,13 @@
         </v-col>
       </v-row>
     </v-container>
+    <Footers />
   </div>
 </template>
 
 <script>
 export default {
-  name: "ProjectPage",
+  name: "ProjectIndexPage",
   data() {
     return {
       datas: ""
@@ -56,21 +80,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.top {
-  margin-top: 20rem;
-}
-
-.project {
-  background: #0a0f19 !important;
-
-  &:hover {
-    border: 2px dashed yellow;
-  }
-
-  &--title {
-    font-size: 0.9rem;
-  }
-}
-</style>

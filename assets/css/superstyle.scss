@@ -2,8 +2,10 @@
 
 $font-title: "Merriweather", serif;
 $font-default: "Be Vietnam Pro", sans-serif;
-$color-white: white;
-$color-blue-dark1: #8e96a8;
+$white: white;
+$blue-dark1: #8e96a8;
+$blue-dark2: #0d131c;
+$blue-dark3: #1f2f4e;
 
 * {
   padding: 0;
@@ -11,6 +13,22 @@ $color-blue-dark1: #8e96a8;
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: $font-default;
+}
+
+.ft {
+  font-family: $font-title !important;
+}
+
+.fd {
+  font-family: $font-default !important;
+}
+
+.letter-spc-1 {
+  letter-spacing: 0.2em !important;
+}
+
+h1 {
+  font-size: 3rem;
 }
 
 .hero {
@@ -22,9 +40,9 @@ $color-blue-dark1: #8e96a8;
   }
   &--sosmed {
     &__icon {
-      color: $color-blue-dark1 !important;
+      color: $blue-dark1 !important;
       &:hover {
-        color: $color-white !important;
+        color: $white !important;
       }
     }
   }
@@ -32,5 +50,39 @@ $color-blue-dark1: #8e96a8;
     position: absolute !important;
     bottom: 2rem;
     right: 2rem;
+  }
+}
+
+.project {
+  background-color: $blue-dark2;
+
+  .marginY {
+    margin-top: 20rem;
+    margin-bottom: 10rem;
+  }
+
+  &--title {
+    font-size: 0.85rem;
+    &__name {
+      font-size: 0.6rem;
+    }
+  }
+
+  &--card {
+    background-color: $blue-dark3 !important;
+
+    &:hover {
+      background-color: $blue-dark1 !important;
+      color: $blue-dark2 !important;
+      font-weight: bold;
+    }
+
+    &--image {
+      &__wrapper {
+        width: 100%;
+        height: 300px;
+        background-color: $blue-dark2;
+      }
+    }
   }
 }

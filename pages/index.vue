@@ -4,8 +4,8 @@
       <v-row align="center">
         <v-col @mouseover="cv.show = false" @mouseleave="cv.show = true">
           <span class="yellow--text">Hello World, I'm 👋</span>
-          <h1 class="font-weight-black text-h2 my-1">Tommy Alhamra.</h1>
-          <h2 id="sayHay" class="text--secondary hero--subtitle"></h2>
+          <h1 class="font-weight-black my-1">Tommy Alhamra.</h1>
+          <h2 id="sayHay" class="text--secondary"></h2>
           <div class="my-5">
             <span v-for="(menu, i) in menus" :key="i">
               <v-btn
