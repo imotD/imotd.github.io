@@ -81,4 +81,9 @@ h1 {
   height: 300px;
   background-color: #0d131c;
 }
+
+.empty {
+  background-color: #0d131c;
+  height: 100vh;
+}
 /*# sourceMappingURL=superstyle.css.map */

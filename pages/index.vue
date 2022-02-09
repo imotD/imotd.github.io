@@ -71,55 +71,55 @@ export default {
     return {
       cv: {
         show: true,
-        url: "https://github.com/imotD",
-        msg: "My Super CV"
+        url: "https://cv.dottomuniverse.tech/",
+        msg: "My Super CV",
       },
       menus: [
         {
           title: "Projects",
-          to: "/projects",
-          hint: "Projects"
+          to: "/projects-maintance",
+          hint: "Projects",
         },
         {
           title: "Podcast",
           to: "/podcast",
-          hint: "Suka Ngobrol"
+          hint: "Suka Ngobrol",
         },
         {
           title: "Dottom Style",
           to: "/art",
-          hint: "Gallery Seni"
+          hint: "Gallery Seni",
         },
         {
           title: "Support",
           to: "/support",
-          hint: "Traktir Kopi untuk saya"
+          hint: "Traktir Kopi untuk saya",
         },
         {
           title: "About",
           to: "/about",
-          hint: "Saya Pemalu"
-        }
+          hint: "Saya Pemalu",
+        },
       ],
       sosmed: [
         {
           icon: "github",
-          link: "https://github.com/imotD"
+          link: "https://github.com/imotD",
         },
         {
           icon: "email",
           link: "mailto:tommy.alhamra@gmail.com",
-          hover: "email-open"
+          hover: "email-open",
         },
         {
           icon: "instagram",
-          link: "https://www.instagram.com/tommyalhamra/"
+          link: "https://www.instagram.com/tommyalhamra/",
         },
         {
           icon: "linkedin",
-          link: "https://id.linkedin.com/in/tommy-alhamra-217112151 "
-        }
-      ]
+          link: "https://id.linkedin.com/in/tommy-alhamra-217112151 ",
+        },
+      ],
     };
   },
   mounted() {
@@ -129,12 +129,12 @@ export default {
     textSayhay() {
       this.$gsap.to("#sayHay", {
         duration: 1,
-        text: "I like to make something."
+        text: "I like to make something.",
       });
     },
     goToCV(link) {
       window.open(link.url, "_blank");
-    }
-  }
+    },
+  },
 };
 </script>
