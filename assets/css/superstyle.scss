@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&display=swap");
-
-$font-title: "Merriweather", serif;
-$font-main: "Be Vietnam Pro", sans-serif;
+@import "fonts";
 
 $white: white;
-$blue-dark1: #8e96a8;
-$blue-dark2: #0d131c;
-$blue-dark3: #1f2f4e;
+$grey-light1: #ccd6f6;
+$grey-light2: #9ea7c6;
+$blue-dark1: #1f2f4e;
+$blue-dark2: #0a192f;
+
 $pink: #e91e6e;
 $yellow: yellow;
 
@@ -18,9 +17,18 @@ $yellow: yellow;
   font-family: $font-main;
 }
 
-.ft {
-  font-family: $font-title !important;
+.app {
+  background-color: $blue-dark2 !important;
+  color: $grey-light2 !important;
 }
+
+.text-light {
+  color: $grey-light1;
+}
+
+// .ft {
+//   font-family: $font-title !important;
+// }
 
 .fd {
   font-family: $font-main !important;
@@ -31,21 +39,22 @@ $yellow: yellow;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .hero {
   height: 100vh;
   display: flex;
 
-  &--subtitle {
-    font-family: $font-title !important;
-  }
+  // &--subtitle {
+  //   font-family: $font-title !important;
+  // }
+
   &--sosmed {
     &__icon {
       color: $blue-dark1 !important;
       &:hover {
-        color: $white !important;
+        color: $grey-light1 !important;
       }
     }
   }
@@ -57,7 +66,7 @@ h1 {
 }
 
 .project {
-  background-color: $blue-dark2;
+  background-color: $blue-dark1;
 
   .marginY {
     margin-top: 20rem;
@@ -72,7 +81,7 @@ h1 {
   }
 
   &--card {
-    background-color: $blue-dark3 !important;
+    background-color: $blue-dark2 !important;
 
     &:hover {
       background-color: $pink !important;
@@ -84,13 +93,13 @@ h1 {
       &__wrapper {
         width: 100%;
         height: 300px;
-        background-color: $blue-dark2;
+        background-color: $blue-dark1;
       }
     }
   }
 }
 
 .empty {
-  background-color: $blue-dark2;
+  background-color: $blue-dark1;
   height: 100vh;
 }

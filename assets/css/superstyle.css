@@ -1,19 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: "Be Vietnam Pro", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
-.ft {
-  font-family: "Merriweather", serif !important;
+.app {
+  background-color: #0a192f !important;
+  color: #9ea7c6 !important;
+}
+
+.text-light {
+  color: #ccd6f6;
 }
 
 .fd {
-  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-family: "Rubik", sans-serif !important;
 }
 
 .letter-spc-1 {
@@ -21,7 +26,7 @@
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .hero {
@@ -31,16 +36,12 @@ h1 {
   display: flex;
 }
 
-.hero--subtitle {
-  font-family: "Merriweather", serif !important;
-}
-
 .hero--sosmed__icon {
-  color: #8e96a8 !important;
+  color: #1f2f4e !important;
 }
 
 .hero--sosmed__icon:hover {
-  color: white !important;
+  color: #ccd6f6 !important;
 }
 
 .hero--button {
@@ -50,7 +51,7 @@ h1 {
 }
 
 .project {
-  background-color: #0d131c;
+  background-color: #1f2f4e;
 }
 
 .project .marginY {
@@ -67,7 +68,7 @@ h1 {
 }
 
 .project--card {
-  background-color: #1f2f4e !important;
+  background-color: #0a192f !important;
 }
 
 .project--card:hover {
@@ -79,11 +80,11 @@ h1 {
 .project--card--image__wrapper {
   width: 100%;
   height: 300px;
-  background-color: #0d131c;
+  background-color: #1f2f4e;
 }
 
 .empty {
-  background-color: #0d131c;
+  background-color: #1f2f4e;
   height: 100vh;
 }
 /*# sourceMappingURL=superstyle.css.map */

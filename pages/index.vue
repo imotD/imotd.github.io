@@ -1,22 +1,29 @@
 <template>
   <div>
     <v-container class="hero">
-      <v-row align="center">
-        <v-col @mouseover="cv.show = false" @mouseleave="cv.show = true">
-          <span class="yellow--text">Hello World, I'm 👋</span>
-          <h1 class="font-weight-black my-1">Tommy Alhamra.</h1>
-          <h2 id="sayHay" class="text--secondary"></h2>
-          <div class="my-5">
+      <v-row align="center" class="text-center">
+        <v-col
+          cols="12"
+          @mouseover="cv.show = false"
+          @mouseleave="cv.show = true"
+        >
+          <div class="yellow--text">
+            <i
+              class="em em-fire p-5 mb-1s"
+              aria-role="presentation"
+              aria-label="FIRE"
+            ></i>
+            <p class="py-0">Welcome to Masterpiece</p>
+          </div>
+          <div class="my">
+            <h1 class="font-weight-bold text-light">Super Dottom</h1>
+            <h1 id="sayHay" class="font-weight-bold" />
+          </div>
+          <div class="mb-5">
             <span v-for="(menu, i) in menus" :key="i">
-              <v-btn
-                text
-                small
-                plain
-                :to="menu.to"
-                :title="menu.hint"
-                class="pl-0"
-              >
-                {{ menu.title }} <span class="yellow--text">&#8728;</span>
+              <v-btn text small plain :to="menu.to" :title="menu.hint">
+                <h3 class="font-weight-medium">{{ menu.title }}</h3>
+                <span class="yellow--text">&#8728;</span>
               </v-btn>
             </span>
           </div>
@@ -26,20 +33,11 @@
               :key="i"
               :href="icon.link"
               target="_blank"
-              class="mr-3 text-decoration-none hero--sosmed"
+              class="mr-5 text-decoration-none hero--sosmed"
             >
               <v-icon class="hero--sosmed__icon"> mdi-{{ icon.icon }} </v-icon>
             </a>
           </div>
-        </v-col>
-        <v-col>
-          <!-- <img
-            id="vue"
-            src="../static/vuetify-logo.svg"
-            width="300"
-            alt="image"
-          />
-          <div class="circle"></div> -->
         </v-col>
       </v-row>
     </v-container>
@@ -72,12 +70,12 @@ export default {
       cv: {
         show: true,
         url: "https://cv.dottomuniverse.tech/",
-        msg: "My Super CV",
+        msg: "My Resume",
       },
       menus: [
         {
           title: "Projects",
-          to: "/projects-maintance",
+          to: "/projectss",
           hint: "Projects",
         },
         {

@@ -14,11 +14,12 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "stylesheet", href: "https://emoji-css.afeld.me/emoji.css" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/css/superstyle.scss"],
+  css: ["~/assets/css/superstyle.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
