@@ -1,27 +1,43 @@
 <template>
   <div>
     <v-container class="hero">
-      <v-row align="center" class="text-center">
+      <v-row align="center" class="text-center text-md-left">
         <v-col
           cols="12"
+          md="8"
           @mouseover="cv.show = false"
           @mouseleave="cv.show = true"
         >
           <div class="yellow--text">
             <i
-              class="em em-fire p-5 mb-1s"
+              class="em em-fire p-5 mb-1 ma-auto d-block d-md-none"
               aria-role="presentation"
               aria-label="FIRE"
             ></i>
             <p class="py-0">Welcome to Masterpiece</p>
           </div>
           <div class="my">
-            <h1 class="font-weight-bold text-light">Super Dottom</h1>
+            <h1 class="font-weight-bold text-light">
+              S<span class="d-inline-flex d-md-none">u</span
+              ><i
+                class="em em-fire d-none d-md-inline-block mx-1"
+                aria-role="presentation"
+                aria-label="FIRE"
+              ></i
+              >per Dottom
+            </h1>
             <h1 id="sayHay" class="font-weight-bold" />
           </div>
           <div class="mb-5">
             <span v-for="(menu, i) in menus" :key="i">
-              <v-btn text small plain :to="menu.to" :title="menu.hint">
+              <v-btn
+                class="pl-md-0"
+                text
+                small
+                plain
+                :to="menu.to"
+                :title="menu.hint"
+              >
                 <h3 class="font-weight-medium">{{ menu.title }}</h3>
                 <span class="yellow--text">&#8728;</span>
               </v-btn>
@@ -75,7 +91,7 @@ export default {
       menus: [
         {
           title: "Projects",
-          to: "/projectss",
+          to: "/projects",
           hint: "Projects",
         },
         {
@@ -114,8 +130,12 @@ export default {
           link: "https://www.instagram.com/tommyalhamra/",
         },
         {
+          icon: "book-open-blank-variant",
+          link: "https://medium.com/@tommyalhamra ",
+        },
+        {
           icon: "linkedin",
-          link: "https://id.linkedin.com/in/tommy-alhamra-217112151 ",
+          link: "https://id.linkedin.com/in/tommy-alhamra ",
         },
       ],
     };

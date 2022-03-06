@@ -40,6 +40,9 @@ $yellow: yellow;
 
 h1 {
   font-size: 2.5rem;
+  @media (max-width: 425px) {
+    font-size: 5vmax;
+  }
 }
 
 .hero {
@@ -66,7 +69,16 @@ h1 {
 }
 
 .project {
-  background-color: $blue-dark1;
+  background-color: $blue-dark2;
+
+  &__header {
+    background-image: url("@/static/txtr-natural.png");
+    background-repeat: repeat;
+    position: absolute;
+    height: 30rem;
+    top: 0;
+    width: 100%;
+  }
 
   .marginY {
     margin-top: 20rem;
@@ -81,7 +93,7 @@ h1 {
   }
 
   &--card {
-    background-color: $blue-dark2 !important;
+    background-color: $blue-dark1 !important;
 
     &:hover {
       background-color: $pink !important;

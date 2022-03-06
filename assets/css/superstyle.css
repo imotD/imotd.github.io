@@ -29,6 +29,12 @@ h1 {
   font-size: 2.5rem;
 }
 
+@media (max-width: 425px) {
+  h1 {
+    font-size: 5vmax;
+  }
+}
+
 .hero {
   height: 100vh;
   display: -webkit-box;
@@ -51,7 +57,16 @@ h1 {
 }
 
 .project {
-  background-color: #1f2f4e;
+  background-color: #0a192f;
+}
+
+.project__header {
+  background-image: url("@/static/txtr-natural.png");
+  background-repeat: repeat;
+  position: absolute;
+  height: 30rem;
+  top: 0;
+  width: 100%;
 }
 
 .project .marginY {
@@ -68,7 +83,7 @@ h1 {
 }
 
 .project--card {
-  background-color: #0a192f !important;
+  background-color: #1f2f4e !important;
 }
 
 .project--card:hover {
