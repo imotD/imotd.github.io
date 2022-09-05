@@ -23,31 +23,31 @@
           :image="item.fields.image"
         />
       </main>
-      <BaseIcon nav="icons icons--left" title="Back" @btn="back()">
+      <!-- <BaseIcon nav="icons icons--left" title="Back" @btn="back()">
         <ph-arrow-u-up-left :size="35" />
       </BaseIcon>
 
       <BaseIcon nav="icons icons--right" title="Karya" @btn="next()">
         <ph-arrow-u-down-right :size="35" />
-      </BaseIcon>
+      </BaseIcon> -->
     </div>
     <Footer />
   </div>
 </template>
 
 <script>
-import BaseIcon from "@/components/BaseIcon.vue";
+// import BaseIcon from "@/components/BaseIcon.vue";
 import BaseCardProject from "@/components/BaseCardProject.vue";
-import { PhArrowUUpLeft, PhArrowUDownRight } from "phosphor-vue";
+// import { PhArrowUUpLeft, PhArrowUDownRight } from "phosphor-vue";
 import Footer from "@/components/Footer.vue";
 export default {
   name: "Project",
   components: {
-    BaseIcon,
+    // BaseIcon,
     BaseCardProject,
     Footer,
-    PhArrowUUpLeft,
-    PhArrowUDownRight,
+    // PhArrowUUpLeft,
+    // PhArrowUDownRight,
   },
   data() {
     return {

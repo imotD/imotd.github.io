@@ -75,7 +75,6 @@
           class="
             absolute
             bottom-0
-            m-auto
             left-0
             right-0
             h-60
@@ -96,12 +95,8 @@
 </template>
 
 <script>
-// import { PhArrowRight } from "phosphor-vue";
 export default {
   name: "BaseCardProject",
-  // components: {
-  //   PhArrowRight,
-  // },
   props: ["title", "description", "category", "image", "icon", "id"],
   data() {
     return {};

@@ -9,7 +9,7 @@
             </span>
             <br />
             Saya
-            <span class="font-black font-black" title="Tommy Alhamra">
+            <span class="font-black" title="Tommy Alhamra">
               Tommy.
             </span>
           </p>
@@ -44,7 +44,7 @@
               </span>
             </p>
           </div>
-          <div
+          <!-- <div
             class="flex m-auto sm:m-0 text-gray-500 pt-4 w-24 justify-between"
           >
             <a
@@ -68,7 +68,7 @@
             >
               <ph-linkedin-logo :size="22" />
             </a>
-          </div>
+          </div> -->
         </div>
         <div class="m-auto hidden sm:inline">
           <img
@@ -85,14 +85,10 @@
 
 <script>
 import Footer from "@/components/Footer.vue";
-import { PhEnvelopeSimple, PhLinkedinLogo, PhGithubLogo } from "phosphor-vue";
 
 export default {
   name: "Home",
   components: {
-    PhEnvelopeSimple,
-    PhLinkedinLogo,
-    PhGithubLogo,
     Footer,
   },
   data() {
