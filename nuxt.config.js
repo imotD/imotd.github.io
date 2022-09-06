@@ -39,7 +39,24 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['nuxt-gsap-module'],
+  modules: ['nuxt-gsap-module', '@nuxtjs/axios', 'contentful-module'],
+
+  axios: {
+    // proxy: true
+    // baseURL: 'http://localhost:4000'
+  },
+
+  contentful: {
+    default: 'master',
+    activeEnvironments: ['master'],
+    environments: {
+      master: {
+        space: 'icoydrcnnd1w',
+        accessToken: 'as4OAGDQZWmlRx0ykLCz4K8VEq_7AFrAbw57ivnFDxk',
+        environment: 'master'
+      }
+    }
+  },
 
   // Add global page transition
   pageTransition: {
@@ -99,5 +116,7 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    transpile: ['contentful-module']
+  }
 };

@@ -40,27 +40,35 @@
                 <v-col cols="12" md="4" class="pa-4 my-1">
                   <div>
                     <span
-                      class="project--title__name letter-spc-1 text--disabled text-uppercase"
+                      class="
+                        project--title__name
+                        letter-spc-1
+                        text--disabled text-uppercase
+                      "
                     >
                       Client
                     </span>
                     <p class="project--title mt-1 text-capitalize">
-                      {{ data.client }}
+                      {{ data.fields.client }}
                     </p>
                     <span
-                      class="letter-spc-1 project--title__name text--disabled text-uppercase"
+                      class="
+                        letter-spc-1
+                        project--title__name
+                        text--disabled text-uppercase
+                      "
                     >
                       Project
                     </span>
                     <p class="project--title mt-1 text-capitalize">
-                      {{ data.title }}
+                      {{ data.fields.title }}
                     </p>
                   </div>
                   <div>
                     <v-list-item class="pa-0 text--disabled">
                       <v-list-item-content>
                         <v-list-item-subtitle
-                          v-for="list in data.category"
+                          v-for="list in data.fields.category"
                           :key="list"
                           class="text-caption text-capitalize"
                         >
@@ -85,11 +93,25 @@ export default {
   name: "ProjectIndexPage",
   data() {
     return {
-      datas: ""
+      datas: "",
+      posts: "",
     };
   },
   created() {
-    this.datas = this.$store.state.projects;
-  }
+    // this.datas = this.$store.state.projects;
+  },
+  mounted() {
+    this.test();
+  },
+  methods: {
+    test() {
+      this.$contentful.client
+        .getEntries({
+          content_type: "product",
+        })
+        .then((entry) => (this.datas = entry.items))
+        .catch((err) => console.log(err, "<<<err"));
+    },
+  },
 };
 </script>
