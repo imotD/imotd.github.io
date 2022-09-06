@@ -18,18 +18,20 @@
           </div>
           <div class="my">
             <h1 class="font-weight-bold text-light">
-              S<span class="d-inline-flex d-md-none">u</span
-              ><i
-                class="em em-fire d-none d-md-inline-block mx-1"
+              S
+              <span class="d-inline d-md-none">u</span>
+              <i
+                class="em em-fire d-none d-md-inline-block mx-0 mx-md-1"
                 aria-role="presentation"
                 aria-label="FIRE"
-              ></i
-              >per Dottom
+              >
+              </i>
+              p e r_ Dottom
             </h1>
-            <h1 id="sayHay" class="font-weight-bold" />
+            <h2 id="sayHay" class="font-weight-bold" />
           </div>
           <div class="mb-5">
-            <span v-for="(menu, i) in menus" :key="i">
+            <div class="d-sm-inline-block" v-for="(menu, i) in menus" :key="i">
               <v-btn
                 class="pl-md-0"
                 text
@@ -39,9 +41,9 @@
                 :title="menu.hint"
               >
                 <h3 class="font-weight-medium">{{ menu.title }}</h3>
-                <span class="yellow--text">&#8728;</span>
+                <span class="yellow--text ml-1">&#8728;</span>
               </v-btn>
-            </span>
+            </div>
           </div>
           <div>
             <a
@@ -92,12 +94,12 @@ export default {
         {
           title: "Projects",
           to: "/projects",
-          hint: "Projects",
+          hint: "Kerjaan/Karya",
         },
         {
           title: "Podcast",
           to: "/podcast",
-          hint: "Suka Ngobrol",
+          hint: "Keluh Kesah",
         },
         {
           title: "Dottom Style",
