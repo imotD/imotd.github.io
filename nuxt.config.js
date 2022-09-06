@@ -1,25 +1,30 @@
-import colors from "vuetify/es5/util/colors";
+import colors from 'vuetify/es5/util/colors';
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - TheSuperWebs",
-    title: "TheSuperWebs",
+    titleTemplate: '%s - @imotD - super dottom',
+    title: 'Tommy Alhamra',
     htmlAttrs: {
-      lang: "en"
+      lang: 'en'
     },
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" }
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Website Tommy Alhamra yang merupakan kumpulan karya yang dikerjakan dan disenangi. Tommy seorang warga sipil atau npc dalam sebuah game. Hire me! levelUP++'
+      },
+      { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    link: [{ rel: "stylesheet", href: "https://emoji-css.afeld.me/emoji.css" }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'stylesheet', href: 'https://emoji-css.afeld.me/emoji.css' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/css/superstyle.css"],
+  css: ['~/assets/css/superstyle.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -30,16 +35,16 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify"
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-gsap-module"],
+  modules: ['nuxt-gsap-module'],
 
   // Add global page transition
   pageTransition: {
-    name: "page",
-    mode: "out-in",
+    name: 'page',
+    mode: 'out-in',
     css: false,
 
     beforeEnter(el) {
@@ -52,7 +57,7 @@ export default {
       this.$gsap.to(el, {
         opacity: 1,
         duration: 0.5,
-        ease: "power2.inOut",
+        ease: 'power2.inOut',
         onComplete: done
       });
     },
@@ -61,7 +66,7 @@ export default {
       this.$gsap.to(el, {
         opacity: 0,
         duration: 0.5,
-        ease: "power2.inOut",
+        ease: 'power2.inOut',
         onComplete: done
       });
     }
@@ -76,7 +81,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ["~/assets/variables.scss"],
+    customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: true,
       themes: {
