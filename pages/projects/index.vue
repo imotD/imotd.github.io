@@ -16,7 +16,7 @@
                   <div class="project--image__wrapper">
                     <v-img
                       :lazy-src="require('/static/img-lazy.jpg')"
-                      :src="require('/assets/img/2366.jpg')"
+                      :src="data.fields.img"
                       class="project--image__picture"
                       height="300px"
                       width="100%"
