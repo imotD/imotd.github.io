@@ -14,10 +14,10 @@
               aria-role="presentation"
               aria-label="FIRE"
             ></i>
-            <p class="py-0">Welcome to Masterpiece</p>
+            <p class="py-0">Selamat Datang di Galeri</p>
           </div>
-          <div class="my">
-            <h1 class="font-weight-bold text-light">
+          <div class="mb-3">
+            <h1 class="font-weight-bold text-light mb-1">
               S
               <span class="d-inline d-md-none">u</span>
               <i
@@ -112,7 +112,7 @@ export default {
           hint: "Traktir Kopi untuk saya",
         },
         {
-          title: "About",
+          title: "Tentang",
           to: "/about",
           hint: "Saya Pemalu",
         },
@@ -149,7 +149,7 @@ export default {
     textSayhay() {
       this.$gsap.to("#sayHay", {
         duration: 1,
-        text: "I like to make something.",
+        text: "Tempat berkumpulnya hal-hal yang saya sukai.",
       });
     },
     goToCV(link) {

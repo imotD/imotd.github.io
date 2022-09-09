@@ -1,15 +1,9 @@
 <template>
   <div class="hero">
     <v-container>
-      <h1>Project</h1>
+      <h1 class="mt-15">Project</h1>
       <p class="text--secondary">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum illo,
-        magni quos vitae sit laudantium minima reprehenderit, expedita
-        reiciendis quae dolorum perferendis. Sunt, autem enim. Dolores quasi hic
-        odio illo veniam dolor et, obcaecati necessitatibus, debitis
-        perspiciatis soluta numquam rem placeat vitae veritatis? Voluptates
-        pariatur aperiam minima. Minus quas totam laudantium vitae dicta sed rem
-        aut impedit molestias
+       Kerjaan/Latihan Random (@imotD)
       </p>
     </v-container>
   </div>
@@ -24,7 +18,7 @@ export default {};
   background-image: url("@/static/txtr-natural.png");
   background-repeat: repeat;
   position: absolute;
-  height: 30rem;
+  height: 20rem;
   top: 0;
   width: 100%;
 
