@@ -17,11 +17,15 @@
   color: #ccd6f6;
 }
 
-.fd {
+.font--main {
   font-family: "Rubik", sans-serif !important;
 }
 
-.letter-spc-1 {
+.ls--s {
+  letter-spacing: 0.1em !important;
+}
+
+.ls--m {
   letter-spacing: 0.2em !important;
 }
 

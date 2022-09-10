@@ -4,12 +4,8 @@
     <v-container class="marginY">
       <v-row>
         <v-col v-for="(data, index) in datas" :key="index" cols="12" sm="6">
-          <v-card
-            :to="`/projects/${data.fields.id}`"
-            class="project--card"
-            tile
-            flat
-          >
+          <!-- :to="`/projects/${data.fields.id}`" -->
+          <v-card class="project--card" tile flat>
             <v-container fluid>
               <v-row dense>
                 <v-col cols="12" md="8" class="pa-0">
@@ -42,7 +38,7 @@
                     <span
                       class="
                         project--title__name
-                        letter-spc-1
+                        ls--m
                         text--disabled text-uppercase
                       "
                     >
@@ -53,7 +49,7 @@
                     </p>
                     <span
                       class="
-                        letter-spc-1
+                        ls--m
                         project--title__name
                         text--disabled text-uppercase
                       "

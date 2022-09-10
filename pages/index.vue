@@ -14,7 +14,7 @@
               aria-role="presentation"
               aria-label="FIRE"
             ></i>
-            <p class="py-0">Selamat Datang di Galeri</p>
+            <p class="py-0 ls--s">Selamat Datang di Galeri</p>
           </div>
           <div class="mb-3">
             <h1 class="font-weight-bold text-light mb-1">
@@ -28,7 +28,7 @@
               </i>
               per Dottom
             </h1>
-            <h3 id="sayHay" class="font-weight-bold" />
+            <h3 id="sayHay" class="font-weight-bold ls--s" />
           </div>
           <div class="mb-5">
             <div class="d-sm-inline-block" v-for="(menu, i) in menus" :key="i">

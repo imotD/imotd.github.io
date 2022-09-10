@@ -26,16 +26,19 @@ $yellow: yellow;
   color: $grey-light1;
 }
 
-// .ft {
-//   font-family: $font-title !important;
-// }
-
-.fd {
-  font-family: $font-main !important;
+.font {
+  &--main {
+    font-family: $font-main !important;
+  }
 }
 
-.letter-spc-1 {
-  letter-spacing: 0.2em !important;
+.ls {
+  &--s {
+    letter-spacing: 0.1em !important;
+  }
+  &--m {
+    letter-spacing: 0.2em !important;
+  }
 }
 
 h1 {
@@ -48,10 +51,6 @@ h1 {
 .hero {
   height: 100vh;
   display: flex;
-
-  // &--subtitle {
-  //   font-family: $font-title !important;
-  // }
 
   &--sosmed {
     &__icon {
