@@ -5,7 +5,7 @@
       <v-row>
         <v-col v-for="(data, index) in datas" :key="index" cols="12" sm="6">
           <v-card
-            :to="`/projects/${data.title}`"
+            :to="`/projects/${data.fields.id}`"
             class="project--card"
             tile
             flat
@@ -84,7 +84,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <Footers />
   </div>
 </template>
 
@@ -92,25 +91,14 @@
 export default {
   name: "ProjectIndexPage",
   data() {
-    return {
-      datas: "",
-      posts: "",
-    };
-  },
-  created() {
-    // this.datas = this.$store.state.projects;
+    return {};
   },
   mounted() {
-    this.test();
+    this.$store.dispatch("fetchProject");
   },
-  methods: {
-    test() {
-      this.$contentful.client
-        .getEntries({
-          content_type: "product",
-        })
-        .then((entry) => (this.datas = entry.items))
-        .catch((err) => console.log(err, "<<<err"));
+  computed: {
+    datas() {
+      return this.$store.state.project;
     },
   },
 };

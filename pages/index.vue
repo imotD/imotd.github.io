@@ -26,21 +26,21 @@
                 aria-label="FIRE"
               >
               </i>
-              p e r_ Dottom
+              per Dottom
             </h1>
-            <h2 id="sayHay" class="font-weight-bold" />
+            <h3 id="sayHay" class="font-weight-bold" />
           </div>
           <div class="mb-5">
             <div class="d-sm-inline-block" v-for="(menu, i) in menus" :key="i">
               <v-btn
-                class="pl-md-0"
+                class="pl-md-0 my-1"
                 text
                 small
                 plain
                 :to="menu.to"
                 :title="menu.hint"
               >
-                <h3 class="font-weight-medium">{{ menu.title }}</h3>
+                <h4 class="font-weight-medium">{{ menu.title }}</h4>
                 <span class="yellow--text ml-1">&#8728;</span>
               </v-btn>
             </div>
@@ -59,7 +59,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-tooltip top color="pink darken-4">
+    <v-tooltip v-if="!phone" top color="pink darken-4 d">
       <template v-slot:activator="{ on, attrs }">
         <v-fab-transition>
           <v-btn
@@ -90,60 +90,21 @@ export default {
         url: "https://cv.dottomuniverse.tech/",
         msg: "My Resume",
       },
-      menus: [
-        {
-          title: "Projects",
-          to: "/projects",
-          hint: "Kerjaan/Karya",
-        },
-        {
-          title: "Podcast",
-          to: "/podcast",
-          hint: "Keluh Kesah",
-        },
-        {
-          title: "Dottom Style",
-          to: "/art",
-          hint: "Gallery Seni",
-        },
-        {
-          title: "Support",
-          to: "/support",
-          hint: "Traktir Kopi untuk saya",
-        },
-        {
-          title: "Tentang",
-          to: "/about",
-          hint: "Saya Pemalu",
-        },
-      ],
-      sosmed: [
-        {
-          icon: "github",
-          link: "https://github.com/imotD",
-        },
-        {
-          icon: "email",
-          link: "mailto:tommy.alhamra@gmail.com",
-          hover: "email-open",
-        },
-        {
-          icon: "instagram",
-          link: "https://www.instagram.com/tommyalhamra/",
-        },
-        {
-          icon: "book-open-blank-variant",
-          link: "https://medium.com/@tommyalhamra ",
-        },
-        {
-          icon: "linkedin",
-          link: "https://id.linkedin.com/in/tommy-alhamra ",
-        },
-      ],
     };
   },
   mounted() {
     this.textSayhay();
+  },
+  computed: {
+    sosmed() {
+      return this.$store.state.sosmed;
+    },
+    menus() {
+      return this.$store.state.menus;
+    },
+    phone() {
+      return this.$vuetify.breakpoint.width <= 425;
+    },
   },
   methods: {
     textSayhay() {
