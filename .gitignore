@@ -20,6 +20,8 @@ node_modules
 npm-debug.log
 package-lock.json
 *.css.map
+logs
+*.log
 
 
 ### Nuxtjs ###
@@ -47,3 +49,20 @@ dist
 # Ignore all local history of files
 .history
 .ionide
+
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example

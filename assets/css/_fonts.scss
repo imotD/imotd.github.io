@@ -1,3 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+$font: 'Rubik',
+sans-serif;
 
-$font-main: "Rubik", sans-serif;
+@use 'vuetify'with ($body-font-family: $font);

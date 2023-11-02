@@ -1,121 +1,105 @@
 <template>
-  <div>
+  <div class="d-flex justify-start align-center h-screen bg-app">
     <v-container class="hero">
-      <v-row align="center" class="text-center text-md-left">
-        <v-col
-          cols="12"
-          md="8"
-          @mouseover="cv.show = false"
-          @mouseleave="cv.show = true"
-        >
-          <div class="yellow--text">
-            <i
-              class="em em-fire p-5 mb-1 ma-auto d-block d-md-none"
-              aria-role="presentation"
-              aria-label="FIRE"
-            ></i>
-            <p class="py-0 ls--s">Selamat Datang di Galeri</p>
-          </div>
-          <div class="mb-3">
-            <h1 class="font-weight-bold text-light mb-1">
-              S
-              <span class="d-inline d-md-none">u</span>
-              <i
-                class="em em-fire d-none d-md-inline-block mx-0 mx-md-1"
-                aria-role="presentation"
-                aria-label="FIRE"
-              >
-              </i>
-              per Dottom
-            </h1>
-            <h3 id="sayHay" class="font-weight-bold ls--s" />
-          </div>
-          <div class="mb-5">
-            <div class="d-sm-inline-block" v-for="(menu, i) in menus" :key="i">
-              <v-btn
-                class="pl-md-0 my-1"
-                text
-                small
-                plain
-                :to="menu.to"
-                :title="menu.hint"
-              >
-                <h4 class="font-weight-medium">{{ menu.title }}</h4>
-                <span class="yellow--text ml-1">&#8728;</span>
-              </v-btn>
-            </div>
-          </div>
-          <div>
-            <a
-              v-for="(icon, i) in sosmed"
-              :key="i"
-              :href="icon.link"
-              target="_blank"
-              class="mr-5 text-decoration-none hero--sosmed"
-            >
-              <v-icon class="hero--sosmed__icon"> mdi-{{ icon.icon }} </v-icon>
-            </a>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
-    <v-tooltip v-if="!phone" top color="pink darken-4 d">
-      <template v-slot:activator="{ on, attrs }">
-        <v-fab-transition>
-          <v-btn
-            v-bind="attrs"
-            v-on="on"
-            v-show="cv.show"
-            color="pink"
-            fab
-            class="hero--button"
-            @click="goToCV(cv)"
+      <div class="d-flex flex-column">
+        <p>Welcome to my website</p>
+
+        <div class="my-md-2">
+          <h1 class="text-h3 font-weight-bold">Dottom Universe 🔥</h1>
+          <p
+            class="text-h4 text-medium-emphasis font-weight-bold text-capitalize"
           >
-            <v-icon>mdi-rocket-launch-outline</v-icon>
+            all activities are here
+          </p>
+        </div>
+
+        <div>
+          <v-btn
+            v-for="menu in menus"
+            :key="i"
+            size="small"
+            rounded="xs"
+            class="mr-md-3"
+            elevation="0"
+            variant="plain"
+            :to="menu.to"
+          >
+            {{ menu.title }}
           </v-btn>
-        </v-fab-transition>
-      </template>
-      <span class="text-caption">{{ cv.msg }}</span>
-    </v-tooltip>
+        </div>
+        <div>
+          <v-btn
+            v-for="sosmed in socialMedia"
+            :key="i"
+            size="small"
+            variant="plain"
+          >
+            <v-icon start :icon="`mdi-${sosmed.icon}`"></v-icon>
+            <!-- {{ sosmed.icon }} -->
+          </v-btn>
+        </div>
+      </div>
+    </v-container>
+    <Tooltips />
   </div>
 </template>
 
-<script>
-export default {
-  name: "IndexPage",
-  data() {
-    return {
-      cv: {
-        show: true,
-        url: "https://cv.dottomuniverse.tech/",
-        msg: "My Resume",
-      },
-    };
+<script setup>
+import { ref } from "vue";
+
+const menus = ref([
+  {
+    title: "Projects",
+    to: "/projects",
+    hint: "Kerjaan/Karya",
   },
-  mounted() {
-    this.textSayhay();
+  {
+    title: "Podcast",
+    to: "/podcast",
+    hint: "Keluh Kesah",
   },
-  computed: {
-    sosmed() {
-      return this.$store.state.sosmed;
-    },
-    menus() {
-      return this.$store.state.menus;
-    },
-    phone() {
-      return this.$vuetify.breakpoint.width <= 425;
-    },
+  {
+    title: "Dottom Style",
+    to: "/art",
+    hint: "Gallery Seni",
   },
-  methods: {
-    textSayhay() {
-      this.$gsap.to("#sayHay", {
-        duration: 1,
-        text: "Tempat berkumpulnya hal-hal yang saya sukai.",
-      });
-    },
-    goToCV(link) {
-      window.open(link.url, "_blank");
-    },
+  {
+    title: "Support",
+    to: "/support",
+    hint: "Traktir Kopi untuk saya",
   },
-};
+  {
+    title: "Tentang",
+    to: "/about",
+    hint: "Saya Pemalu",
+  },
+]);
+
+const socialMedia = ref([
+  {
+    icon: "github",
+    link: "https://github.com/imotD",
+  },
+  {
+    icon: "email",
+    link: "mailto:tommy.alhamra@gmail.com",
+    hover: "email-open",
+  },
+  {
+    icon: "instagram",
+    link: "https://www.instagram.com/tommyalhamra/",
+  },
+  {
+    icon: "book-open-blank-variant",
+    link: "https://medium.com/@tommyalhamra ",
+  },
+  {
+    icon: "linkedin",
+    link: "https://id.linkedin.com/in/tommy-alhamra ",
+  },
+]);
 </script>
+
+<style lang="scss" scoped>
+@use "~/assets/css/main.scss";
+</style>
