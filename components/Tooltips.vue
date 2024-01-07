@@ -1,19 +1,24 @@
 <template>
-  <div>
-    <v-tooltip top color="pink darken-4 d">
-      <template v-slot:activator="{ on, attrs }">
-        <v-fab-transition>
-          <v-btn color="pink" fab class="hero--button">
+  <v-fab-transition>
+    <q-fab class="tooltip">
+      <v-tooltip location="top">
+        <template v-slot:activator="{ props }">
+          <v-btn icon v-bind="props" color="pink" size="large">
             <v-icon>mdi-rocket-launch-outline</v-icon>
           </v-btn>
-          <v-btn icon="$vuetify"> Button </v-btn>
-        </v-fab-transition>
-      </template>
-      <span class="text-caption">tolong</span>
-    </v-tooltip>
-  </div>
+        </template>
+        <span>My Resume</span>
+      </v-tooltip>
+    </q-fab>
+  </v-fab-transition>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.tooltip {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+}
+</style>

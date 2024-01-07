@@ -1,7 +1,11 @@
 <template>
   <div class="d-flex justify-start align-center h-screen bg-app">
     <v-container class="hero">
-      <div class="d-flex flex-column">
+      <div
+        class="d-flex flex-column"
+        @mouseover="viewToolips = false"
+        @mouseleave="viewToolips = true"
+      >
         <p>Welcome to my website</p>
 
         <div class="my-md-2">
@@ -19,7 +23,7 @@
             :key="i"
             size="small"
             rounded="xs"
-            class="mr-md-3"
+            class="mr-3"
             elevation="0"
             variant="plain"
             :to="menu.to"
@@ -27,20 +31,24 @@
             {{ menu.title }}
           </v-btn>
         </div>
-        <div>
-          <v-btn
-            v-for="sosmed in socialMedia"
-            :key="i"
-            size="small"
-            variant="plain"
-          >
-            <v-icon start :icon="`mdi-${sosmed.icon}`"></v-icon>
-            <!-- {{ sosmed.icon }} -->
-          </v-btn>
+
+        <div class="mt-md-2">
+          <template v-for="sosmed in socialMedia" :key="i">
+            <v-btn
+              :href="sosmed.link"
+              :icon="sosmed.icon"
+              color="grey-darken-1"
+              class="icon"
+              target="_blank"
+              size="large"
+              variant="text"
+            />
+          </template>
         </div>
       </div>
     </v-container>
-    <Tooltips />
+
+    <Tooltips v-show="viewToolips" />
   </div>
 </template>
 
@@ -51,7 +59,7 @@ const menus = ref([
   {
     title: "Projects",
     to: "/projects",
-    hint: "Kerjaan/Karya",
+    hint: "Proyek/Karya",
   },
   {
     title: "Podcast",
@@ -61,7 +69,7 @@ const menus = ref([
   {
     title: "Dottom Style",
     to: "/art",
-    hint: "Gallery Seni",
+    hint: "Karya Iseng",
   },
   {
     title: "Support",
@@ -69,35 +77,37 @@ const menus = ref([
     hint: "Traktir Kopi untuk saya",
   },
   {
-    title: "Tentang",
+    title: "About",
     to: "/about",
     hint: "Saya Pemalu",
   },
 ]);
 
-const socialMedia = ref([
+const socialMedia = [
   {
-    icon: "github",
+    icon: "mdi-github",
     link: "https://github.com/imotD",
   },
   {
-    icon: "email",
+    icon: "mdi-email",
     link: "mailto:tommy.alhamra@gmail.com",
     hover: "email-open",
   },
   {
-    icon: "instagram",
+    icon: "mdi-instagram",
     link: "https://www.instagram.com/tommyalhamra/",
   },
   {
-    icon: "book-open-blank-variant",
+    icon: "mdi-book-open-blank-variant",
     link: "https://medium.com/@tommyalhamra ",
   },
   {
-    icon: "linkedin",
+    icon: "mdi-linkedin",
     link: "https://id.linkedin.com/in/tommy-alhamra ",
   },
-]);
+];
+
+const viewToolips = ref(true);
 </script>
 
 <style lang="scss" scoped>
