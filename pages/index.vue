@@ -18,22 +18,22 @@
         </div>
 
         <div>
-          <v-btn
-            v-for="menu in menus"
-            :key="i"
-            size="small"
-            rounded="xs"
-            class="mr-3"
-            elevation="0"
-            variant="plain"
-            :to="menu.to"
-          >
-            {{ menu.title }}
-          </v-btn>
+          <template v-for="menu in menus" :key="menu.title">
+            <v-btn
+              size="small"
+              rounded="xs"
+              class="mr-3"
+              elevation="0"
+              variant="plain"
+              :to="menu.to"
+            >
+              {{ menu.title }}
+            </v-btn>
+          </template>
         </div>
 
         <div class="mt-md-2">
-          <template v-for="sosmed in socialMedia" :key="i">
+          <template v-for="sosmed in socialMedia" :key="sosmed.link">
             <v-btn
               :href="sosmed.link"
               :icon="sosmed.icon"
@@ -55,7 +55,7 @@
 <script setup>
 import { ref } from "vue";
 
-const menus = ref([
+const menus = [
   {
     title: "Projects",
     to: "/projects",
@@ -81,7 +81,7 @@ const menus = ref([
     to: "/about",
     hint: "Saya Pemalu",
   },
-]);
+];
 
 const socialMedia = [
   {
