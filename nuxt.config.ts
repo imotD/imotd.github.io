@@ -6,6 +6,14 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+
+  runtimeConfig: {
+    spaceId: process.env.NUXT_SPACE_ID,
+    apiAccessToken: process.env.NUXT_API_ACCESS_TOKEN,
+    public: {
+      apiBase: process.env.NUXT_PUBLIC_API_BASE
+    }
+  },
   
   devtools: { enabled: true },
 

@@ -8,6 +8,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: $font-default;
+  position: relative;
 }
 
 #app {
@@ -18,5 +19,28 @@
 
 .bg-app {
   background-color: whitesmoke;
-  // color: #9ea7c6 !important;
+}
+
+.icon {
+  :hover {
+    color: black;
+  }
+}
+
+.animation {
+  &--tooltip {
+    animation-timing-function: ease-in-out;
+    animation-name: pulse;
+    animation-duration: .5s;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }

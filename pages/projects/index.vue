@@ -2,17 +2,15 @@
   <div>
     <Header />
     <v-container>
-      <p>Project</p>
       <v-row>
-        <v-col cols="12" sm="6">
+        <v-col v-for="item in items.items" :key="item.id" cols="12" sm="6">
           <v-card class="project--card" tile flat>
             <v-container fluid>
               <v-row dense>
                 <v-col cols="12" md="8" class="pa-0">
                   <div class="project--image__wrapper">
-                    <!-- <v-img
-                      lazy-src="require('/static/img-lazy.jpg')"
-                      src="data.fields.img"
+                    <v-img
+                      :src="item?.fields?.img"
                       class="project--image__picture"
                       height="300px"
                       width="100%"
@@ -30,7 +28,7 @@
                           ></v-progress-circular>
                         </v-row>
                       </template>
-                    </v-img> -->
+                    </v-img>
                   </div>
                 </v-col>
                 <v-col cols="12" md="4" class="pa-4 my-1">
@@ -41,7 +39,7 @@
                       Client
                     </span>
                     <p class="project--title mt-1 text-capitalize">
-                      data.fields.client
+                      {{ item?.fields?.client }}
                     </p>
                     <span
                       class="ls--m project--title__name text--disabled text-uppercase"
@@ -49,21 +47,21 @@
                       Project
                     </span>
                     <p class="project--title mt-1 text-capitalize">
-                      data.fields.title
+                      {{ item?.fields?.title }}
                     </p>
                   </div>
                   <div>
-                    <!-- <v-list-item class="pa-0 text--disabled">
+                    <v-list-item class="pa-0 text--disabled">
                       <v-list-item-content>
                         <v-list-item-subtitle
-                          v-for="list in data.fields.category"
+                          v-for="list in item?.fields?.category"
                           :key="list"
                           class="text-caption text-capitalize"
                         >
                           {{ list }}
                         </v-list-item-subtitle>
                       </v-list-item-content>
-                    </v-list-item> -->
+                    </v-list-item>
                   </div>
                 </v-col>
               </v-row>
@@ -75,6 +73,8 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { data: items } = await useFetch("/api/projects");
+</script>
 
 <style lang="scss" scoped></style>

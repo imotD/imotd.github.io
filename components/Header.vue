@@ -1,7 +1,7 @@
 <template>
-  <div class="hero">
+  <div class="hero mt-15">
     <v-container>
-      <h1 class="mt-15">Project</h1>
+      <h1 class="">Project</h1>
       <p class="text--secondary">Kerjaan/Latihan Random (@imotD)</p>
     </v-container>
   </div>
