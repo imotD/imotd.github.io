@@ -1,80 +1,118 @@
 <template>
-  <div>
+  <div class="bg-app h-screen">
     <Header />
+
+    <!-- content -->
     <v-container>
       <v-row>
-        <v-col v-for="item in items.items" :key="item.id" cols="12" sm="6">
-          <v-card class="project--card" tile flat>
-            <v-container fluid>
-              <v-row dense>
-                <v-col cols="12" md="8" class="pa-0">
-                  <div class="project--image__wrapper">
-                    <v-img
-                      :src="item?.fields?.img"
-                      class="project--image__picture"
-                      height="300px"
-                      width="100%"
-                      alt="image"
-                    >
-                      <template v-slot:placeholder>
-                        <v-row
-                          class="fill-height ma-0"
-                          align="center"
-                          justify="center"
-                        >
-                          <v-progress-circular
-                            indeterminate
-                            color="grey lighten-5"
-                          ></v-progress-circular>
-                        </v-row>
-                      </template>
-                    </v-img>
-                  </div>
-                </v-col>
-                <v-col cols="12" md="4" class="pa-4 my-1">
-                  <div>
-                    <span
-                      class="project--title__name ls--m text--disabled text-uppercase"
-                    >
-                      Client
-                    </span>
-                    <p class="project--title mt-1 text-capitalize">
-                      {{ item?.fields?.client }}
-                    </p>
-                    <span
-                      class="ls--m project--title__name text--disabled text-uppercase"
-                    >
-                      Project
-                    </span>
-                    <p class="project--title mt-1 text-capitalize">
-                      {{ item?.fields?.title }}
-                    </p>
-                  </div>
-                  <div>
-                    <v-list-item class="pa-0 text--disabled">
-                      <v-list-item-content>
-                        <v-list-item-subtitle
-                          v-for="list in item?.fields?.category"
-                          :key="list"
-                          class="text-caption text-capitalize"
-                        >
-                          {{ list }}
-                        </v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </div>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-card>
+        <v-col v-for="menu in menus" :key="menu.label" cols="auto">
+          <v-btn
+            :loading="isLoading"
+            :active="hasMenu.value === menu.value"
+            :class="hasMenu.value === menu.value ? 'bg-yellow' : ''"
+            variant="outlined"
+            rounded="xs"
+            density="comfortable"
+            @click="selectedMenu(menu)"
+          >
+            {{ menu.label }}
+          </v-btn>
         </v-col>
       </v-row>
+
+      <v-row>
+        <template v-if="products?.total > 0">
+          <v-col
+            v-for="item in products?.items"
+            :key="item.id"
+            cols="12"
+            sm="6"
+          >
+            <CardImage :item="item" @onDialog="handleDialogOn" />
+          </v-col>
+        </template>
+        <div v-else-if="products?.total == 0">
+          Oops, data tidak ditemukan...
+        </div>
+        <div v-else>loading...</div>
+      </v-row>
     </v-container>
+
+    <!-- dialog -->
+    <DialogDetail
+      :model="dialog"
+      :data="detail"
+      @onclickDialog="handleDialogOff"
+    />
   </div>
 </template>
 
 <script setup>
-const { data: items } = await useFetch("/api/projects");
-</script>
+onMounted(() => {
+  fetchDataProject();
+});
 
-<style lang="scss" scoped></style>
+const fetchDataProject = async (category = "all") => {
+  let data;
+
+  if (category == "all") {
+    data = await $fetch("/api/projects");
+  } else {
+    data = await $fetch(`/api/projects-category?category=${category}`);
+  }
+
+  products.value = data;
+};
+
+const products = ref({});
+const isLoading = ref(false);
+const dialog = ref(false);
+const detail = ref(null);
+
+const hasMenu = ref({
+  label: "All",
+  value: "all",
+});
+
+const menus = ref([
+  {
+    label: "ALL",
+    value: "all",
+  },
+  {
+    label: "Personal",
+    value: "personal",
+  },
+  {
+    label: "Company",
+    value: "company",
+  },
+  {
+    label: "Freelance",
+    value: "freelance",
+  },
+]);
+
+const selectedMenu = async (menu) => {
+  hasMenu.value = menu;
+
+  fetchDataProject(menu.value);
+};
+
+const handleDialogOn = (id) => {
+  dialog.value = true;
+  try {
+    const { pending, data: items } = useFetch(`/api/projects-detail?id=${id}`, {
+      lazy: true,
+    });
+
+    detail.value = items.value["items"][0].fields;
+  } catch (error) {
+    handleDialogOff();
+  }
+};
+
+const handleDialogOff = () => {
+  dialog.value = false;
+};
+</script>

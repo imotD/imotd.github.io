@@ -18,7 +18,7 @@
 }
 
 .bg-app {
-  background-color: whitesmoke;
+  background-color: $color-background;
 }
 
 .icon {
@@ -27,20 +27,17 @@
   }
 }
 
-.animation {
-  &--tooltip {
-    animation-timing-function: ease-in-out;
-    animation-name: pulse;
-    animation-duration: .5s;
-  }
-}
+.project {
+  &--card {
+    background-color: $color-white !important;
+    cursor: pointer;
 
-@keyframes pulse {
-  from {
-    transform: scale(0.8);
-  }
+    &:hover {
+      background-color: $color-active !important;
+    }
 
-  to {
-    transform: scale(1);
+    &__image {
+      background-color: $color-background-second;
+    }
   }
 }
