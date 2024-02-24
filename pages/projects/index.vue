@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-app h-screen">
+  <div class="bg-app pb-5">
     <Header />
 
     <!-- content -->
@@ -101,12 +101,17 @@ const selectedMenu = async (menu) => {
 
 const handleDialogOn = (id) => {
   dialog.value = true;
-  try {
-    const { pending, data: items } = useFetch(`/api/projects-detail?id=${id}`, {
-      lazy: true,
-    });
 
-    detail.value = items.value["items"][0].fields;
+  try {
+    useFetch(`/api/projects-detail?id=${id}`, {
+      lazy: true,
+    })
+      .then((res) => {
+        detail.value = res?.data?.value["items"][0]?.fields;
+      })
+      .catch((e) => {
+        console.log("🚀 ~ handleDialogOn ~ e:", e);
+      });
   } catch (error) {
     handleDialogOff();
   }

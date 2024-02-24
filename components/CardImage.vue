@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="project--card"
+    class="project--car cursor-pointer"
     tile
     flat
     @click="$emit('onDialog', item?.fields?.id)"
@@ -10,7 +10,7 @@
         <v-col cols="12" md="8" class="pa-0">
           <div class="project--card__image">
             <v-img
-              :src="item?.fields?.img"
+              :src="item?.fields?.img[0]"
               lazy-src="@/assets/img/img-lazy.jpg "
               class="project--image__picture"
               alt="image"
