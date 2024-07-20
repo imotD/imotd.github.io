@@ -2,7 +2,7 @@
   <div class="bg-app pb-5">
     <Header />
 
-    <!-- content -->
+    <!-- CONTENT -->
     <v-container>
       <v-row>
         <v-col v-for="menu in menus" :key="menu.label" cols="auto">
@@ -32,13 +32,15 @@
           </v-col>
         </template>
         <div v-else-if="products?.total == 0">
-          Oops, data tidak ditemukan...
+          <v-col cols="12"> Oops, data tidak ditemukan... 😭 </v-col>
         </div>
-        <div v-else>loading...</div>
+        <div v-else>
+          <v-col cols="12"> loading... </v-col>
+        </div>
       </v-row>
     </v-container>
 
-    <!-- dialog -->
+    <!-- DIALOG -->
     <DialogDetail
       :model="dialog"
       :data="detail"
@@ -99,11 +101,11 @@ const selectedMenu = async (menu) => {
   fetchDataProject(menu.value);
 };
 
-const handleDialogOn = (id) => {
+const handleDialogOn = async (id) => {
   dialog.value = true;
 
   try {
-    useFetch(`/api/projects-detail?id=${id}`, {
+    await useFetch(`/api/projects-detail?id=${id}`, {
       lazy: true,
     })
       .then((res) => {
@@ -112,7 +114,7 @@ const handleDialogOn = (id) => {
       .catch((e) => {
         console.log("🚀 ~ handleDialogOn ~ e:", e);
       });
-  } catch (error) {
+  } catch (e) {
     handleDialogOff();
   }
 };
