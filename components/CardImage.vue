@@ -67,7 +67,7 @@
     </v-container>
   </v-card>
 </template>
-ß
+
 <script setup>
 defineProps(["item"]);
 </script>

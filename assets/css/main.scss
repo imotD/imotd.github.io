@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 
 @import "variable";
 @import "fonts";
+@import "headers";
 
 * {
   padding: 0;
@@ -16,6 +18,10 @@
   font-family: $font-default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.font-header {
+  font-family: $font-header;
 }
 
 .bg-app {

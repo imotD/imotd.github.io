@@ -1,6 +1,6 @@
 <template>
   <div class="bg-app pb-5">
-    <Header />
+    <Header name="Projects" />
 
     <!-- CONTENT -->
     <v-container>
