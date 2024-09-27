@@ -28,8 +28,5 @@
     "@mdi/font": "^7.3.67",
     "pinia": "^2.2.2",
     "sass": "^1.69.4"
-  },
-  "overrides": {
-    "vue": "latest"
   }
 }
