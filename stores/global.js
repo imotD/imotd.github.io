@@ -9,13 +9,13 @@ export const useGlobalStore = defineStore("global", {
         hint: "Proyek/Karya",
       },
       {
-        title: "Podcast",
-        to: "/podcast",
+        title: "Podcasts",
+        to: "/podcasts",
         hint: "Keluh Kesah",
       },
       {
         title: "Dottom Style",
-        to: "/art",
+        to: "/arts",
         hint: "Karya Iseng",
       },
       {
