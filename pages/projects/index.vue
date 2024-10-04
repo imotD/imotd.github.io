@@ -57,13 +57,17 @@ onMounted(() => {
 const fetchDataProject = async (category = "all") => {
   let data;
 
-  if (category == "all") {
-    data = await $fetch("/api/projects");
-  } else {
-    data = await $fetch(`/api/projects-category?category=${category}`);
-  }
+  try {
+    if (category == "all") {
+      data = await $fetch("/api/projects");
+    } else {
+      data = await $fetch(`/api/projects-category?category=${category}`);
+    }
 
-  products.value = data;
+    products.value = data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const products = ref({});

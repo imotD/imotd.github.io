@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-start align-center h-screen bg-app">
+  <div class="d-flex justify-center align-center h-screen bg-app">
     <v-container class="hero">
       <div
         class="d-flex flex-column"
