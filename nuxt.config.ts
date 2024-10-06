@@ -3,18 +3,20 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 export default defineNuxtConfig({
   css: ['vuetify/lib/styles/main.sass', '@/assets/css/main.scss'],
+  ssr: false,
+
   build: {
     transpile: ["vuetify"],
   },
 
   runtimeConfig: {
-    spaceId: process.env.NUXT_SPACE_ID,
-    apiAccessToken: process.env.NUXT_API_ACCESS_TOKEN,
+    spaceId: process.env.SPACE_ID,
+    apiAccessToken: process.env.API_ACCESS_TOKEN,
     public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE
+      apiBase: process.env.PUBLIC_API_BASE
     }
   },
-  
+
   devtools: { enabled: true },
 
   modules: [
@@ -36,4 +38,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: '2024-10-06',
 });
